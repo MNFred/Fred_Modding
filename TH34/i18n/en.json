@@ -1,0 +1,121 @@
+{
+  "character": {
+    "TH34": {
+      "name": "TH-34",
+      "description": "<c=aaaaaa>TH-34</c>\nA common warehouse workbot reprogrammed for combat. Can switch between a <c=keyword>battle form</c> that generates <c=downside>heat</c>, and a <c=keyword>defense form</c> that removes it."
+    }
+  },
+  "card": {
+    "TurboMode": {
+      "name": "Turbo Mode"
+    },
+    "IdleMode": {
+      "name": "Idle Mode"
+    },
+    "AmpUp": {
+      "name": "Amp Up"
+    },
+    "TagOut": {
+      "name": "Tag Out"
+    },
+    "ThermoResistor": {
+      "name": "Thermo Resistor"
+    },
+    "FactoryReset": {
+      "name": "Factory Reset"
+    },
+    "BackgroundTask": {
+      "name": "Background Task"
+    },
+    "ThetaProtocol": {
+      "name": "Theta Protocol"
+    },
+    "FragShot": {
+      "name": "Frag Shot"
+    },
+    "CounterBalance": {
+      "name": "Counter Balance"
+    },
+    "Safeguard": {
+      "name": "Safeguard"
+    },
+    "Anode": {
+      "name": "Anode"
+    },
+    "Anion": {
+      "name": "Anion"
+    },
+    "CleverTech": {
+      "name": "Clever Tech"
+    },
+    "PulseCannon": {
+      "name": "Pulse Cannon"
+    },
+    "KillSwitch": {
+      "name": "Kill Switch"
+    },
+    "Optimize": {
+      "name": "Optimize"
+    },
+    "Reboot": {
+      "name": "Reboot"
+    },
+    "Manifold": {
+      "name": "Manifold"
+    },
+    "DemonCore": {
+      "name": "Demon Core"
+    },
+    "Unload": {
+      "name": "Unload"
+    }
+  },
+  "artifact": {
+    "SilverCoils": {
+      "name": "SILVER COILS",
+      "description": "The first time you <c=downside>overheat</c> each combat, <c=heal>heal 1</c> and gain 1 <c=status>HEAT CAPACITY</c>."
+    },
+    "CodeBlue": {
+      "name": "CODE BLUE",
+      "description": "Draw <c=action>+1 card</c> every turn if you have any <c=status>MINUS CHARGE</c>."
+    },
+    "ThermalPump": {
+      "name": "THERMAL PUMP",
+      "description": "Every 4 turns, gain 1 <c=status>HEAT CAPACITY</c>."
+    },
+    "ElectronDonor": {
+      "name": "ELECTRON DONOR",
+      "description": "If you have any <c=status>MINUS CHARGE</c> and less than \n-2 <c=status>HEAT</c>, attacks deal +1 damage."
+    },
+    "MechanicalHeart": {
+      "name": "MECHANICAL HEART",
+      "description": "Whenever you gain <c=status>PLUS CHARGE</c> or <c=status>MINUS CHARGE</c>, gain 1 more."
+    },
+    "IonBattery": {
+      "name": "ION BATTERY",
+      "description": "Gain 1 extra <c=energy>ENERGY</c> the first time you gain <c=status>PLUS CHARGE</c> or <c=status>MINUS CHARGE</c> every turn."
+    }
+  },
+  "status": {
+    "PlusCharge": {
+      "name": "PLUS CHARGE",
+      "description": "Attacks do <c=keyword>{0}</c> more damage. Gain <c=keyword>{0}</c> <c=status>HEAT</c> after every attack."
+    },
+    "MinusCharge": {
+      "name": "MINUS CHARGE",
+      "description": "Attacks do <c=keyword>{0}</c> less damage. Lose <c=keyword>{0}</c> <c=status>HEAT</c> after every card played. <c=status>HEAT</c> can be reduced to -3."
+    },
+    "Refractory": {
+      "name": "HEAT CAPACITY",
+      "description": "Increase the threshold of <c=downside>overheat</c> by <c=keyword>{0}</c>."
+    },
+    "Optimize": {
+      "name": "OPTIMIZE",
+      "description": "Gain <c=keyword>{0}</c> extra <c=energy>ENERGY</c> every turn if you have any <c=status>MINUS CHARGE</c>."
+    },
+    "OptimizeB": {
+      "name": "OPTIMIZE B",
+      "description": "Gain <c=keyword>{0}</c> extra <c=energy>ENERGY</c> every turn if you have any <c=status>PLUS CHARGE</c>."
+    }
+  }
+}
