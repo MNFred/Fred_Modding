@@ -1,0 +1,19 @@
+-- 1.1.1 --
+-- General Changes --
+> While you have minus charge, you can go as low as -3 heat
+> "Refractory" status renamed to "Heat Capacity"
+-- Artifact Changes --
+> Electron Donor now works only with less than -2 heat
+-- Card Changes --
+> Background Task A now gives 1 shield instead of 1 evade
+> Background Task B now gives temp shield and normal shield instead of shield X2
+> All upgrades of Tag Out now set Minus Charge as 2 instead of adding 2
+> Thermo Resistor now gives temp shield with all it's upgrades
+> All energy costs of Safeguard reduced by 
+> Reboot and all its upgrades now set both charges to 0
+> Reboot B cost increased to 4
+> Theta Protocol and its upgrades now also give X temp shield
+> Manifold A is now infinite
+> Manifold B now costs 1 less and gives 2 temp shield and 1 heat capacity
+-- 1.1.2 --
+> TH-34's name now shows up in character selection with his description

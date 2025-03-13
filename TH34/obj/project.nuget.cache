@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pHJDF/c3zNQleUxMbhgwd3sWoBYM1VFM7oHN9b0tAgHv+p+u7e4IkjmbWAGhuTBcqCb22zHZ5U9XEM68QjCGyw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\TH-34\\TH34.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\nickel.modbuildconfig\\1.2.1\\nickel.modbuildconfig.1.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}
