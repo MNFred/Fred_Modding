@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\TH-34\\TH34.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\Repository\\Fred_Modding\\TH34\\TH34.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\TH-34\\TH34.csproj": {
+    "C:\\Users\\Admin\\Desktop\\Repository\\Fred_Modding\\TH34\\TH34.csproj": {
       "version": "1.1.2",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\TH-34\\TH34.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Repository\\Fred_Modding\\TH34\\TH34.csproj",
         "projectName": "TH34",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\TH-34\\TH34.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\Repository\\Fred_Modding\\TH34\\TH34.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\TH-34\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\Repository\\Fred_Modding\\TH34\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
