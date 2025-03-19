@@ -10,7 +10,7 @@ using HarmonyLib;
 namespace Fred.TH34.Artifacts;
 public class ArtifactThermalPump : Artifact, ITH34Artifact
 {
-    private int turnCount;
+    public int turnCount;
     public static void Register(IPluginPackage<IModManifest> package, IModHelper helper)
     {
         helper.Content.Artifacts.RegisterArtifact("ThermalPump", new()

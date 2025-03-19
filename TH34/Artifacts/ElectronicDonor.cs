@@ -36,7 +36,7 @@ public class ArtifactElectronDonor : Artifact, ITH34Artifact
             if(fromPlayer == true)
             {
                 if(state.ship.Get(Status.heat)<-2)
-                    return state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status);
+                    return 1;
                 if(state.ship.Get(Status.heat)>=-2)
                     return 0;
                 else return 0;

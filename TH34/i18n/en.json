@@ -33,8 +33,8 @@
     "FragShot": {
       "name": "Frag Shot"
     },
-    "CounterBalance": {
-      "name": "Counter Balance"
+    "BlastProcessing": {
+      "name": "Blast Processing"
     },
     "Safeguard": {
       "name": "Safeguard"
@@ -94,6 +94,62 @@
     "IonBattery": {
       "name": "ION BATTERY",
       "description": "Gain 1 extra <c=energy>ENERGY</c> the first time you gain <c=status>PLUS CHARGE</c> or <c=status>MINUS CHARGE</c> every turn."
+    },
+    "Calculator": {
+      "name": "CALCULATOR",
+      "description": "If you have any <c=status>MINUS CHARGE</c>, card draw on all of Riggs' cards are increased by 1."
+    },
+    "MagneticField": {
+      "name": "MAGNETIC FIELD",
+      "description": "Whenever you gain or lose <c=status>MINUS CHARGE</c>, gain or lose twice as much <c=status>SHIELD CAPACITY</c>."
+    },
+    "WireCutters": {
+      "name": "WIRE CUTTERS",
+      "description": "If you hold <c=status>PLUS CHARGE</c> for 5 turns in a row without losing any, convert it into <c=status>POWERDRIVE</c>."
+    },
+    "WirelessCharging": {
+      "name": "WIRELESS CHARGING",
+      "description": "While you have <c=status>PLUS CHARGE</c>, <c=midrow>attack drones</c>, <c=midrow>missiles</c>, and <c=midrow>space mines</c> deal <c=damage>+1 damage</c>."
+    },
+    "SilverLining": {
+      "name": "SILVER LINING",
+      "description": "If you have 3 or less hull, <c=status>PLUS CHARGE</c> gives 1 less <c=status>HEAT</c> per attack."
+    },
+    "TaskManager": {
+      "name": "TASK MANAGER",
+      "description": "While you have <c=status>MINUS CHARGE</c>, all cards with <c=cardtrait>exhaust</c> cost 1 less <c=energy>ENERGY</c>."
+    },
+    "Golemancy": {
+      "name": "GOLEMANCY",
+      "description": "If you have any <c=status>SHARD</c>, <c=status>PLUS CHARGE</c> removes <c=status>SHARD</c> instead of adding <c=status>HEAT</c>. If you have -3 <c=status>HEAT</c>, <c=status>MINUS CHARGE</c> gives <c=status>SHARD</c> instead of removing <c=status>HEAT</c>."
+    },
+    "BitFlip": {
+      "name": "BITFLIP",
+      "description": "Whenever you play a <c=card>basic card</c>, swap all <c=status>MINUS</c> and <c=status>PLUS CHARGE</c>."
+    },
+    "ElectroStimuli": {
+      "name": "ELECTRO-STIMULI",
+      "description": "Increase the value of X on all cards by the amount of <c=status>PLUS CHARGE</c> you have.<c=downside> When playing a card with an X value, gain <c=status>HEAT</c> equal to your <c=status>PLUS CHARGE</c>.</c>"
+    },
+    "LockUp": {
+      "name": "LOCK-UP",
+      "description": "<c=downside>While you have <c=status>MINUS CHARGE</c>, you cannot move</c>, but attacks deals <c=damage>+1 damage</c>."
+    },
+    "Binary": {
+      "name": "BINARY",
+      "description": "While you have <c=status>MINUS CHARGE</c>, <c=keyword>A upgraded</c> cards deal 1 more damage. While you have <c=status>PLUS CHARGE</c>, <c=keyword>B upgraded</c> cards deal 1 more damage."
+    },
+    "PositronBomb": {
+      "name": "POSITRON BOMB",
+      "description": "While you have <c=status>PLUS CHARGE</c>, blastwave does <c=damage>+1 damage</c>.<c=downside> Gain an additional 1 <c=status>HEAT</c> when triggering blastwave while you have <c=status>PLUS CHARGE</c>.</c>"
+    },
+    "ScienceAndMagic": {
+      "name": "SCIENCE AND MAGIC",
+      "description": "<c=status>HEAT CAPACITY</c> also increases your <c=status>MAX SHARD</c>."
+    },
+    "InPersonAutopilot": {
+      "name": "IN-PERSON AUTOPILOT",
+      "description": "At the start of every turn, if you have any <c=status>MINUS CHARGE</c>, gain 1 <c=status>AUTOPILOT</c>."
     }
   },
   "status": {

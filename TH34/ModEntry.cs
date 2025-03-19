@@ -24,6 +24,13 @@ public sealed class ModEntry : SimpleMod
     internal IEssentialsApi? EssentialsApi { get; private set; }
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
     internal ApiImplementation Api { get; private set; } = null!;
+    internal IDuoArtifactsApi? DuoArtifactsApi { get; }
+    internal ITyAndSashaApi? TySashaApi { get; set; }
+    internal ITuckerApi? TuckerApi { get; set; }
+    internal IJohnsonApi? JohnsonApi { get; set; }
+    internal IDynaApi? DynaApi { get; set; }
+    internal IDestinyApi? SpoobsApi { get; set; }
+    internal IBucketApi? BucketApi { get; set; }
     internal ILocaleBoundNonNullLocalizationProvider<IReadOnlyList<string>> Localizations { get; }
     internal IDeckEntry TH34_Deck { get; }
     internal ISpriteEntry TH34_CardBackground { get; }
@@ -53,16 +60,16 @@ public sealed class ModEntry : SimpleMod
         typeof(CardFactoryReset),
         typeof(CardBackgroundTask),
         typeof(CardThetaProtocol),
-        typeof(CardFragShot)
+        typeof(CardBlastProcessing)
     ];
     internal static IReadOnlyList<Type> TH34_Uncommon_Cards { get; } = [
-        typeof(CardCounterBalance),
         typeof(CardSafeguard),
         typeof(CardAnode),
         typeof(CardAnion),
         typeof(CardCleverTech),
         typeof(CardPulseCannon),
-        typeof(CardKillSwitch)
+        typeof(CardKillSwitch),
+        typeof(CardFragShot)
     ];
     internal static IReadOnlyList<Type> TH34_Rare_Cards { get; } = [
         typeof(CardOptimize),
@@ -85,27 +92,54 @@ public sealed class ModEntry : SimpleMod
         typeof(ArtifactMechanicalHeart),
         typeof(ArtifactIonBattery)
     ];
+    internal static IReadOnlyList<Type> TH34_Duo_Artifacts { get; } = [
+        typeof(ArtifactCalculator),
+        typeof(ArtifactMagneticField),
+        typeof(ArtifactWireCutters),
+        typeof(ArtifactWirelessCharging),
+        typeof(ArtifactSilverLining),
+        typeof(ArtifactTaskManager),
+        typeof(ArtifactGolemancy),
+        typeof(ArtifactBitFlip),
+        typeof(ArtifactElectroStimuli),
+        typeof(ArtifactLockUp),
+        typeof(ArtifactBinary),
+        typeof(ArtifactPositronBomb),
+        typeof(ArtifactScienceAndMagic),
+        typeof(ArtifactInPersonAutopilot)
+    ];
     internal static IEnumerable<Type> TH34_AllArtifacts
         => TH34_Common_Artifacts
         .Concat(TH34_Boss_Artifacts);
+
+    internal static readonly IEnumerable<Type> LateRegisterableTypes
+		= TH34_Duo_Artifacts;
     public ModEntry(IPluginPackage<IModManifest> package, IModHelper helper, ILogger logger) : base(package, helper, logger)
     {
         Instance = this;
         Harmony = new(package.Manifest.UniqueName);
+        Harmony.PatchAll();
         Api = new();
         KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!;
+        DuoArtifactsApi = helper.ModRegistry.GetApi<IDuoArtifactsApi>("Shockah.DuoArtifacts");
         _ = new AMinusChargeManager();
         _ = new APlusChargeManager();
         _ = new ARefractoryManager();
         _ = new AOptimizeManager();
         _ = new AOptimizeBManager();
-        Harmony.PatchAll();
         helper.Events.OnModLoadPhaseFinished += (_, phase) =>
 		{
 			if (phase != ModLoadPhase.AfterDbInit)
 				return;
-
+            TySashaApi = helper.ModRegistry.GetApi<ITyAndSashaApi>("TheJazMaster.TyAndSasha");
+            TuckerApi = helper.ModRegistry.GetApi<ITuckerApi>("TuckerTheSaboteur");
 			EssentialsApi = helper.ModRegistry.GetApi<IEssentialsApi>("Nickel.Essentials");
+            JohnsonApi = helper.ModRegistry.GetApi<IJohnsonApi>("Shockah.Johnson");
+            DynaApi = helper.ModRegistry.GetApi<IDynaApi>("Shockah.Dyna");
+            SpoobsApi = helper.ModRegistry.GetApi<IDestinyApi>("Shockah.Destiny");
+            BucketApi = helper.ModRegistry.GetApi<IBucketApi>("TheJazMaster.Bucket");
+            foreach (var registerableType in LateRegisterableTypes)
+				AccessTools.DeclaredMethod(registerableType, nameof(IRegisterable.Register))?.Invoke(null, [package, helper]);
 		};
         CustomTTGlossary.ApplyPatches(Harmony);
         AnyLocalizations = new JsonLocalizationProvider(

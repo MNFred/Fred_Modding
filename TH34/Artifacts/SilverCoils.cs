@@ -10,7 +10,7 @@ using HarmonyLib;
 namespace Fred.TH34.Artifacts;
 public class ArtifactSilverCoils : Artifact, ITH34Artifact
 {
-    private bool activeThisFight = false;
+    public bool activeThisFight = false;
     public static void Register(IPluginPackage<IModManifest> package, IModHelper helper)
     {
         helper.Content.Artifacts.RegisterArtifact("SilverCoils", new()

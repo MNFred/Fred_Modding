@@ -24,29 +24,30 @@ internal sealed class CardUnload : Card, ITH34Card
 		});
 	}
     public override CardData GetData(State state) => new() {
-        art = upgrade == Upgrade.A ? ArtA.Sprite : MainArt.Sprite,
+        art = upgrade == Upgrade.B ? ArtA.Sprite : MainArt.Sprite,
 		artTint = "ffffff",
 		cost = 2
 	};
     public override List<CardAction> GetActions(State s, Combat c) => upgrade switch
 	{
 		Upgrade.A => [
+            new AAttack{damage = GetDmg(s,1)},
             new AAttack{damage = GetDmg(s,2)},
+			new AAttack{damage = GetDmg(s,2)},
+            new AAttack{damage = GetDmg(s,1)},
+            new AStatus{status = ModEntry.Instance.PlusChargeStatus.Status, statusAmount = 0, targetPlayer = true, mode = AStatusMode.Set},
+		],
+		Upgrade.B => [
+            new AAttack{damage = GetDmg(s,1)},
             new AAttack{damage = GetDmg(s,2)},
-            new AAttack{damage = GetDmg(s,2)},
+            new AAttack{damage = GetDmg(s,1)},
             new AStatus{status = ModEntry.Instance.PlusChargeStatus.Status, statusAmount = 0, targetPlayer = true, mode = AStatusMode.Set},
             new AStatus{status = ModEntry.Instance.MinusChargeStatus.Status, statusAmount = 1, targetPlayer = true, mode = AStatusMode.Set}
 		],
-		Upgrade.B => [
-            new AAttack{damage = GetDmg(s,2)},
-            new AAttack{damage = GetDmg(s,2)},
-            new AAttack{damage = GetDmg(s,2)},
-            new AStatus{status = ModEntry.Instance.PlusChargeStatus.Status, statusAmount = -1, targetPlayer = true}
-		],
 		_ => [
+            new AAttack{damage = GetDmg(s,1)},
             new AAttack{damage = GetDmg(s,2)},
-            new AAttack{damage = GetDmg(s,2)},
-            new AAttack{damage = GetDmg(s,2)},
+            new AAttack{damage = GetDmg(s,1)},
             new AStatus{status = ModEntry.Instance.PlusChargeStatus.Status, statusAmount = 0, targetPlayer = true, mode = AStatusMode.Set}
 		],
 	};

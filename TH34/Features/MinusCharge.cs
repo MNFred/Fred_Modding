@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using Fred.TH34.Artifacts;
+using FSPRO;
 using HarmonyLib;
+using Microsoft.Extensions.Logging;
 using Nanoray.Shrike;
 using Nanoray.Shrike.Harmony;
 
@@ -34,14 +38,33 @@ internal sealed class AMinusChargeManager : IStatusLogicHook
         {
             if(state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status)>0)
             {
-                SubzeroHeatsinks? artifact = state.artifacts.Find((x) => x is SubzeroHeatsinks) as SubzeroHeatsinks;
-                state.ship.heatMin = -3;
-                state.ship.Add(Status.heat, -state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status));
-                if(artifact == null)
+                int heatAmount = state.ship.Get(Status.heat);
+                int chargeAmount = state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status);
+                int heatLeft = 0;
+                if(state.artifacts.Any((x) => x is ArtifactGolemancy))
                 {
-                    state.ship.heatMin = 0;
+                    state.ship.heatMin = -99;
+                    state.ship.Add(Status.heat, -state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status));
+                    if(state.ship.Get(Status.heat)<=-3)
+                    {
+                        heatLeft = state.ship.Get(Status.heat)+3;
+                        state.ship.Set(Status.heat,-3);
+                        if(state.EnumerateAllArtifacts().FirstOrDefault(x => x is SubzeroHeatsinks) is { } artifact)
+                            state.ship.heatMin = -3;
+                        else state.ship.heatMin = -0;
+                    }
+                    if(heatLeft < 0)
+                        combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = Math.Abs(heatLeft),timer = 0});
                 }else{
-                    return;
+                    SubzeroHeatsinks? artifact = state.artifacts.Find((x) => x is SubzeroHeatsinks) as SubzeroHeatsinks;
+                    state.ship.heatMin = -3;
+                    state.ship.Add(Status.heat, -state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status));
+                    if(artifact == null)
+                    {
+                        state.ship.heatMin = 0;
+                    }else{
+                        return;
+                    }
                 }
             }
         }, 0);

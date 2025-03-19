@@ -15,7 +15,7 @@ internal sealed class CardFragShot : Card, ITH34Card
 			Meta = new()
 			{
 				deck = ModEntry.Instance.TH34_Deck.Deck,
-				rarity = Rarity.common,
+				rarity = Rarity.uncommon,
 				upgradesTo = [Upgrade.A, Upgrade.B]
 			},
 			Name = ModEntry.Instance.AnyLocalizations.Bind(["card", "FragShot", "name"]).Localize,
