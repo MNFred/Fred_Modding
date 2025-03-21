@@ -93,83 +93,86 @@ internal sealed class APlusChargeManager : IStatusLogicHook
         }, 0);
         ModEntry.Instance.Helper.Events.RegisterBeforeArtifactsHook(nameof(Artifact.OnPlayerPlayCard), (int energyCost, Deck deck, Card card, State state, Combat combat, int handPosition, int handCount) =>
         {
-            bool stopFromHeating = false;
-            bool hasXValue = false;
-            foreach(CardAction action in card.GetActions(state, combat))
+            if(state.artifacts.Any((x) => x is ArtifactElectroStimuli))
             {
-                if(action is AAttack)
+                bool stopFromHeating = false;
+                bool hasXValue = false;
+                foreach(CardAction action in card.GetActions(state, combat))
                 {
-                    stopFromHeating = true;
-                }
-                if(action is AVariableHint)
-                {
-                    hasXValue = true;
-                }
-            }
-            if(hasXValue == true && stopFromHeating == false)
-            {
-                if(state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)>0)
-                {
-                if(state.artifacts.Any((x) => x is ArtifactGolemancy))
-                {
-                    int shardAmount = state.ship.Get(Status.shard);
-                    int chargeAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status);
-                    int shardsLeft = 0;
-                    if(state.artifacts.Any((x) => x is ArtifactSilverLining))
+                    if(action is AAttack)
                     {
-                        if(state.ship.hull <= 3)
+                        stopFromHeating = true;
+                    }
+                    if(action is AVariableHint)
+                    {
+                        hasXValue = true;
+                    }
+                }
+                if(hasXValue == true && stopFromHeating == false)
+                {
+                    if(state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)>0)
+                    {
+                    if(state.artifacts.Any((x) => x is ArtifactGolemancy))
+                    {
+                        int shardAmount = state.ship.Get(Status.shard);
+                        int chargeAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status);
+                        int shardsLeft = 0;
+                        if(state.artifacts.Any((x) => x is ArtifactSilverLining))
                         {
-                            if(shardAmount>0)
+                            if(state.ship.hull <= 3)
                             {
-                            chargeAmount-=1;
-                            shardsLeft = shardAmount-chargeAmount;
-                            combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = -state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)+1});
-                            if(shardsLeft < 0)
-                            {
-                                combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = shardsLeft*-1});
-                            }
+                                if(shardAmount>0)
+                                {
+                                chargeAmount-=1;
+                                shardsLeft = shardAmount-chargeAmount;
+                                combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = -state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)+1});
+                                if(shardsLeft < 0)
+                                {
+                                    combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = shardsLeft*-1});
+                                }
+                                }else{
+                                    combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)-1});
+                                }
                             }else{
-                                combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)-1});
+                                if(shardAmount>0)
+                                {
+                                shardsLeft = shardAmount-chargeAmount;
+                                combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = -state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
+                                if(shardsLeft < 0)
+                                {
+                                    combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = shardsLeft*-1});
+                                }
+                                }else{
+                                    combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
+                                }
                             }
                         }else{
                             if(shardAmount>0)
                             {
-                            shardsLeft = shardAmount-chargeAmount;
-                            combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = -state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
-                            if(shardsLeft < 0)
-                            {
-                                combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = shardsLeft*-1});
-                            }
+                                shardsLeft = shardAmount-chargeAmount;
+                                combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = -state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
+                                if(shardsLeft < 0)
+                                {
+                                    combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = shardsLeft*-1});
+                                }
                             }else{
                                 combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
                             }
                         }
                     }else{
-                        if(shardAmount>0)
+                        if(state.artifacts.Any((x) => x is ArtifactSilverLining))
                         {
-                            shardsLeft = shardAmount-chargeAmount;
-                            combat.QueueImmediate(new AStatus{status = Status.shard, targetPlayer = true, statusAmount = -state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
-                            if(shardsLeft < 0)
+                            if(state.ship.hull <= 3)
                             {
-                                combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = shardsLeft*-1});
+                                combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)-1});
+                            }else{
+                                combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
                             }
                         }else{
                             combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
                         }
                     }
-                }else{
-                    if(state.artifacts.Any((x) => x is ArtifactSilverLining))
-                    {
-                        if(state.ship.hull <= 3)
-                        {
-                            combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)-1});
-                        }else{
-                            combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
-                        }
-                    }else{
-                        combat.QueueImmediate(new AStatus{status = Status.heat, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status)});
                     }
-                }
                 }
             }
         }, 0);

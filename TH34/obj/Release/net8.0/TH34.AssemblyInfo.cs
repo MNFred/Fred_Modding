@@ -13,11 +13,11 @@ using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("TH34")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
-[assembly: System.Reflection.AssemblyFileVersionAttribute("1.1.2.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.1.2")]
+[assembly: System.Reflection.AssemblyFileVersionAttribute("1.2.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.2.2+815ca3fec1faffe2fc3a8022d8ea8ad2c9d113a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("TH34")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TH34")]
-[assembly: System.Reflection.AssemblyVersionAttribute("1.1.2.0")]
+[assembly: System.Reflection.AssemblyVersionAttribute("1.2.2.0")]
 
 // Wygenerowane przez klasę WriteCodeFragment programu MSBuild.
 

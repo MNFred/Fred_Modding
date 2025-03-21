@@ -43,9 +43,8 @@ public class ArtifactWireCutters : Artifact, ITH34Artifact
         }else{ turnCount = 0; }
         if(turnCount >= 5)
         {
-            Pulse();
-            combat.QueueImmediate(new AStatus{status = Status.powerdrive, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status), timer = 0});
-            combat.QueueImmediate(new AStatus{status = ModEntry.Instance.PlusChargeStatus.Status, statusAmount = 0, mode = AStatusMode.Set, targetPlayer = true, timer = 0});
+            combat.QueueImmediate(new AStatus{status = Status.powerdrive, targetPlayer = true, statusAmount = state.ship.Get(ModEntry.Instance.PlusChargeStatus.Status), timer = 0.6});
+            combat.QueueImmediate(new AStatus{status = ModEntry.Instance.PlusChargeStatus.Status, statusAmount = 0, mode = AStatusMode.Set, targetPlayer = true, timer = 0.6});
             turnCount = 0;
         }
     }

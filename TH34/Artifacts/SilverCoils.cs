@@ -43,7 +43,11 @@ public class ArtifactSilverCoils : Artifact, ITH34Artifact
         {
             Pulse();
             combat.QueueImmediate(new AStatus{status = ModEntry.Instance.RefractoryStatus.Status, targetPlayer = true, statusAmount = 1});
-            state.ship.Heal(1);
+            combat.QueueImmediate(new AHeal
+            {
+                targetPlayer = true,
+                healAmount = 1,
+            });
             activeThisFight = true;
         }
     }

@@ -1,6 +1,6 @@
 {
   "UniqueName": "FredsTH34",
-  "Version": "1.2.0",
+  "Version": "1.2.2",
   "RequiredApiVersion": "0.12.0",
   "EntryPointAssembly": "TH34.dll",
   "LoadPhase": "AfterDbInit",

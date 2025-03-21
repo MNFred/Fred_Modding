@@ -49,7 +49,8 @@ public class ArtifactTaskManager : Artifact, ITH34Artifact
 		if(__instance.GetData(state).exhaust == true)
         {
             if(state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status)>0)
-                __result.cost -= 1;
+                if(__result.cost > 0)
+                    __result.cost -= 1;
         }
 	}
 }
