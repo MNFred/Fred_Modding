@@ -131,13 +131,13 @@ public sealed class ModEntry : SimpleMod
 		{
 			if (phase != ModLoadPhase.AfterDbInit)
 				return;
-            TySashaApi = helper.ModRegistry.GetApi<ITyAndSashaApi>("TheJazMaster.TyAndSasha");
-            TuckerApi = helper.ModRegistry.GetApi<ITuckerApi>("TuckerTheSaboteur");
-			EssentialsApi = helper.ModRegistry.GetApi<IEssentialsApi>("Nickel.Essentials");
-            JohnsonApi = helper.ModRegistry.GetApi<IJohnsonApi>("Shockah.Johnson");
-            DynaApi = helper.ModRegistry.GetApi<IDynaApi>("Shockah.Dyna");
-            SpoobsApi = helper.ModRegistry.GetApi<IDestinyApi>("Shockah.Destiny");
-            BucketApi = helper.ModRegistry.GetApi<IBucketApi>("TheJazMaster.Bucket");
+            TySashaApi = helper.ModRegistry.GetApi<ITyAndSashaApi>("TheJazMaster.TyAndSasha")!;
+            TuckerApi = helper.ModRegistry.GetApi<ITuckerApi>("TuckerTheSaboteur")!;
+			EssentialsApi = helper.ModRegistry.GetApi<IEssentialsApi>("Nickel.Essentials")!;
+            JohnsonApi = helper.ModRegistry.GetApi<IJohnsonApi>("Shockah.Johnson")!;
+            DynaApi = helper.ModRegistry.GetApi<IDynaApi>("Shockah.Dyna")!;
+            SpoobsApi = helper.ModRegistry.GetApi<IDestinyApi>("Shockah.Destiny")!;
+            BucketApi = helper.ModRegistry.GetApi<IBucketApi>("TheJazMaster.Bucket")!;
             foreach (var registerableType in LateRegisterableTypes)
 				AccessTools.DeclaredMethod(registerableType, nameof(IRegisterable.Register))?.Invoke(null, [package, helper]);
 		};

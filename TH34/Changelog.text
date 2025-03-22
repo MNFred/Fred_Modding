@@ -27,3 +27,6 @@
 > TH-34 <> Ty&Sasha duo no longer raises your heat by playing cards with X value even without having it.
 > Silver Coils now properly works with Heal Booster
 > TH-34 <> Peri duo no longer breaks your ears when converting Plus Charge into Powerdrive
+-- 1.2.3 --
+> Removed error with modded duo artifacts causing issues if the owner wasn't installed
+> Added some more errors to compensate for the one I fixed

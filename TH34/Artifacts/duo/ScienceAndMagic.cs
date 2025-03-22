@@ -17,6 +17,8 @@ public class ArtifactScienceAndMagic : Artifact, ITH34Artifact
     {
         if (ModEntry.Instance.DuoArtifactsApi is not { } api)
 			return;
+        if (ModEntry.Instance.SpoobsApi is not { } SpoobsApi)
+            return;
         helper.Content.Artifacts.RegisterArtifact("ScienceAndMagic", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,

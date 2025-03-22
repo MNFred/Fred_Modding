@@ -17,6 +17,8 @@ public class ArtifactPositronBomb : Artifact, ITH34Artifact
     {
         if (ModEntry.Instance.DuoArtifactsApi is not { } api)
 			return;
+        if (ModEntry.Instance.DynaApi is not { } DynaApi)
+            return;
         helper.Content.Artifacts.RegisterArtifact("PositronBomb", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
@@ -29,7 +31,7 @@ public class ArtifactPositronBomb : Artifact, ITH34Artifact
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "PositronBomb", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "PositronBomb", "description"]).Localize,
         });
-        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, ModEntry.Instance.DynaApi!.DynaDeck.Deck]);
+        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, DynaApi.DynaDeck.Deck]);
     }
     public override List<Tooltip>? GetExtraTooltips()
     {

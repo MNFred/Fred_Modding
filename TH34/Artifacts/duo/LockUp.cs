@@ -21,6 +21,8 @@ public class ArtifactLockUp : Artifact, ITH34Artifact
     {
         if (ModEntry.Instance.DuoArtifactsApi is not { } api)
 			return;
+        if (ModEntry.Instance.TuckerApi is not { } TuckerApi)
+            return;
         helper.Content.Artifacts.RegisterArtifact("LockUp", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
@@ -33,7 +35,7 @@ public class ArtifactLockUp : Artifact, ITH34Artifact
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "LockUp", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "LockUp", "description"]).Localize,
         });
-        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, ModEntry.Instance.TuckerApi!.TuckerDeck]);
+        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, TuckerApi.TuckerDeck]);
         ModEntry.Instance.Harmony.Patch(
             original: AccessTools.DeclaredMethod(typeof(AMove), nameof(AMove.Begin)),
             transpiler: new HarmonyMethod(MethodBase.GetCurrentMethod()!.DeclaringType!, nameof(AMove_Begin_Transpiler))

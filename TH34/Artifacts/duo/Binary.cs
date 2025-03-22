@@ -17,6 +17,8 @@ public class ArtifactBinary : Artifact, ITH34Artifact
     {
         if (ModEntry.Instance.DuoArtifactsApi is not { } api)
 			return;
+        if (ModEntry.Instance.JohnsonApi is not { } JohnApi)
+            return;
         helper.Content.Artifacts.RegisterArtifact("Binary", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
@@ -29,7 +31,7 @@ public class ArtifactBinary : Artifact, ITH34Artifact
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "Binary", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "Binary", "description"]).Localize,
         });
-        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, ModEntry.Instance.JohnsonApi!.JohnsonDeck.Deck]);
+        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, JohnApi.JohnsonDeck.Deck]);
     }
     public override List<Tooltip>? GetExtraTooltips()
     {

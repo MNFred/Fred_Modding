@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<RootNamespace>Fred.TH34</RootNamespace>
-		<Version>1.2.2</Version>
+		<Version>1.2.3</Version>
 		<IsNickelMod>True</IsNickelMod>
 		<IncludedModProjectPaths>i18n;assets</IncludedModProjectPaths>
 		<LangVersion>12.0</LangVersion>

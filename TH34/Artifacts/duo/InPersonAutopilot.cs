@@ -17,6 +17,8 @@ public class ArtifactInPersonAutopilot : Artifact, ITH34Artifact
     {
         if (ModEntry.Instance.DuoArtifactsApi is not { } api)
 			return;
+        if (ModEntry.Instance.BucketApi is not { } BucketApi)
+            return;
         helper.Content.Artifacts.RegisterArtifact("InPersonAutopilot", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
@@ -29,7 +31,7 @@ public class ArtifactInPersonAutopilot : Artifact, ITH34Artifact
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "InPersonAutopilot", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "InPersonAutopilot", "description"]).Localize,
         });
-        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, ModEntry.Instance.BucketApi!.BucketDeck]);
+        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, BucketApi.BucketDeck]);
     }
     public override List<Tooltip>? GetExtraTooltips()
     {

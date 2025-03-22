@@ -14,6 +14,8 @@ public class ArtifactElectroStimuli : Artifact, ITH34Artifact
     {
         if (ModEntry.Instance.DuoArtifactsApi is not { } api)
 			return;
+        if (ModEntry.Instance.TySashaApi is not { } TyApi)
+			return;
         helper.Content.Artifacts.RegisterArtifact("ElectroStimuli", new()
         {
             ArtifactType = MethodBase.GetCurrentMethod()!.DeclaringType!,
@@ -26,7 +28,7 @@ public class ArtifactElectroStimuli : Artifact, ITH34Artifact
             Name = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "ElectroStimuli", "name"]).Localize,
             Description = ModEntry.Instance.AnyLocalizations.Bind(["artifact", "ElectroStimuli", "description"]).Localize,
         });
-        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, ModEntry.Instance.TySashaApi!.TyDeck]);
+        api.RegisterDuoArtifact(MethodBase.GetCurrentMethod()!.DeclaringType!, [ModEntry.Instance.TH34_Deck.Deck, TyApi.TyDeck]);
     }
     public override List<Tooltip>? GetExtraTooltips()
     {
