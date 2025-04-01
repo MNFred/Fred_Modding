@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qrdzs3YJ1n3iCX76kbn6FZfwcF1GN3miwr3zT5xvquI4ZsenmzJz4XmiVZ9r8el1lQxoVkaRZu78BCQjkJR0EQ==",
+  "dgSpecHash": "QKwLcaWVB2lNLViXNVnUrAM0ZJ4yRdVUeltvPd91YyqO4piyA9bfSRRcEqiNib2rwhuaHVWJcXE06Zr1XIUbtg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\TH34\\TH34.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Repository\\Fred_Modding\\TH34\\TH34.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
