@@ -1,0 +1,185 @@
+{
+  "ship": {
+    "Foundry": {
+      "name": "The Foundry",
+      "description": "A mobile factory, unfortunately its core lacks the proper heat shielding."
+    },
+    "Corsair": {
+      "name": "Corsair",
+      "description": "Made to match the speed of the tiderunner by using its chassis, but much more risky engines."
+    },
+    "Vanguard": {
+      "name": "Vanguard",
+      "description": "A heavily armored defensive ship. Loses <c=card>Basic Dodge</c> and <c=card>Basic Shot</c> in order to have 2 extra <c=card>Basic Blocks</c>."
+    },
+    "Chrysalis": {
+      "name": "Chrysalis",
+      "description": "An amalgamate of no nature and no defining features. Improves upon when slaying opponents."
+    }
+  },
+  "choice": {
+    "Shop": {
+      "RestoreHull": "Restore <c=heal>3</c> max hull"
+    }
+  },
+  "artifact": {
+    "modules": {
+      "EmptyModule": {
+        "name": "EMPTY MODULE",
+        "description": "nothing, get to destroying"
+      },
+      "Cicada1Module": {
+        "name": "CICADA 1.0 MODULE",
+        "description": "Upon pickup: Choose a card to upgrade."
+      },
+      "FireballModule": {
+        "name": "FIREBALL MODULE",
+        "description": "Every <c=action>regular attack</c> from you applies 1 <c=status>HEAT</c>."
+      },
+      "StingerModule": {
+        "name": "STINGER MODULE",
+        "description": "Add a <c=card>Basic Missile</c> to your deck."
+      },
+      "PupaModule": {
+        "name": "PUPA MODULE",
+        "description": "When playing a <c=keyword>Trash card</c>, gain <c=status>TEMP SHIELD</c> equal to double its cost.\n<c=a0a0a0>Hehe, 'butt'.</c>"
+      },
+      "MonarchModule": {
+        "name": "MONARCH MODULE",
+        "description": "Add a <c=card>Basic Drone</c> to your deck."
+      },
+      "MineSweeperModule": {
+        "name": "MINESWEEPER MODULE",
+        "description": "<c=midrow>Attack Drones</c> and <c=midrow>Missiles</c> do <c=damage>+1 damage to the enemy</c>."
+      },
+      "StagModule": {
+        "name": "STAG MODULE",
+        "description": "Gain +3 <c=keyword>max shield</c>."
+      },
+      "JumboModule": {
+        "name": "HUMBLE MODULE",
+        "description": "Your right <c=part>wing</c> gains <c=parttrait>armor</c>."
+      },
+      "WizboModule": {
+        "name": "TOWER MODULE",
+        "description": "Increase the <c=status>HEAT</c> threshold by 1."
+      },
+      "GnatModule": {
+        "name": "GNAT MODULE",
+        "description": "Every 3rd turn: gain 1 <c=status>AUTODODGE RIGHT</c>.\n<c=a0a0a0>I hate this thing.</c>"
+      },
+      "NeedlerModule": {
+        "name": "NEEDLER MODULE",
+        "description": "Every 2nd turn: gain 1 <c=status>TEMPORARY PAYBACK</c>."
+      },
+      "Cicada2Module": {
+        "name": "CICADA 2.0 MODULE",
+        "description": "Upon pickup: Choose a card to remove."
+      },
+      "BruiserModule": {
+        "name": "BRUISER MODULE",
+        "description": "Replace your right <c=part>wing</c> with a new one that will shoot a 0 damage shot that applies <c=status>ENGINE LOCK</c> at the end of every 3rd turn."
+      },
+      "SolarModule": {
+        "name": "BINARY MODULE",
+        "description": "Gain +1 <c=energy>ENERGY</c> on odd turns, <c=downside>and -1 <c=energy>ENERGY</c> on even turns."
+      },
+      "StardogModule": {
+        "name": "OPTIMAL MODULE",
+        "description": "Restore the left missile bay."
+      },
+      "RailCannonModule": {
+        "name": "RAIL MODULE",
+        "description": "Restore the right cannon, <c=downside>but draw 1 less card each turn.</c>"
+      },
+      "GoliathModule": {
+        "name": "GOLIATH MODULE",
+        "description": "Start every combat with a <c=midrow>space mine</c> placed in front of your <c=part>cockpit</c>."
+      },
+      "CannoneerModule": {
+        "name": "CANNONEER MODULE",
+        "description": "Your left <c=part>wing</c> gains <c=parttrait>armor</c>."
+      },
+      "SpikeJrModule": {
+        "name": "SPIKE MODULE",
+        "description": "Replace your left <c=part>wing</c> with a new one that will launch a <c=midrow>seeker</c> at the start of every 3rd turn."
+      },
+      "Cicada3Module": {
+        "name": "CICADA 3.0 MODULE",
+        "description": "On the second turn of combat, gain 1 <c=status>OVERDRIVE</c>."
+      },
+      "ReplicatorModule": {
+        "name": "STORM MODULE",
+        "description": "At the start of each turn, the enemy loses 1 <c=status>SHIELD</c>."
+      },
+      "ScarabModule": {
+        "name": "SCARAB MODULE",
+        "description": "When playing a <c=keyword>Trash card</c>, gain 1 <c=status>OVERDRIVE</c> and 1 <c=status>TEMP SHIELD</c>. Overrides <c=artifact>PUPA MODULE</c>."
+      },
+      "IonRangerModule": {
+        "name": "ION MODULE",
+        "description": "Every <c=action>regular attack</c> from you applies 1 <c=status>HEAT</c>. Increase the damage the enemy takes from overheating by 1. Overrides <c=artifact>FIREBALL MODULE</c>."
+      },
+      "AquaticModule": {
+        "name": "AQUATIC MODULE",
+        "description": "Add a <c=part>scaffold</c> to the middle of your ship. At the end of every turn, your <c=part>scaffolds</c> shoot for 1 damage."
+      },
+      "CrabModule": {
+        "name": "PERFECT MODULE",
+        "description": "Start every combat with 4 <c=status>BUBBLE</c>."
+      },
+      "DrillModule": {
+        "name": "DRILL MODULE",
+        "description": "When you destroy a <c=midrow>midrow object</c>: draw a card."
+      },
+      "RustingModule": {
+        "name": "RUSTING MODULE",
+        "description": "Gain +3 <c=hull>max hull</c>. On the third turn: the enemy gains 1 <c=status>CORRODE</c>."
+      },
+      "BuriedModule": {
+        "name": "BURIED MODULE",
+        "description": "On the first 2 turns of the combat: Gain 3 <c=status>TEMP SHIELD</c>"
+      },
+      "HopperModule": {
+        "name": "HOPPER MODULE",
+        "description": "Every 3rd turn: gain 2 <c=status>AUTODODGE RIGHT</c>. Overrides <c=artifact>GNAT MODULE</c>.\n<c=a0a0a0>I hate this thing too.</c>"
+      }
+    },
+    "FoundryHeart": {
+      "name": "HEART OF THE FOUNDRY",
+      "description": "You can restore <c=heal>3 max hull</c> at the shops. <c=downside>Every 3rd turn: Permanently lose 1 max hull.</c>\n<c=a0a0a0>Forever beating, even if at the cost of its own body.</c>"
+    },
+    "AutoAssembly": {
+      "name": "AUTOMATED ASSEMBLY",
+      "description": "At the end of each combat: You may choose a card, it will be destroyed, but you'll gain <c=hull>2 Max Hull</c>, then heal for triple its cost.\n<c=a0a0a0>Perhaps the factory is still functional after all, maybe you should use it to survive for even a bit longer.</c>"
+    },
+    "CorsairEngines": {
+      "name": "CORSAIR ENGINES",
+      "description": "At the start of each turn: Gain 1 <c=status>EVADE</c> if you have less than 2. <c=downside>If you didn't move at all last turn, gain 1 <c=status>ENGINE STALL</c>.</c>\n<c=a0a0a0>By all means, keep running, make this interesting.</c>"
+    },
+    "CorsairDrive": {
+      "name": "CORSAIR DRIVE",
+      "description": "Replaces <c=artifact>CORSAIR ENGINES</c>. Gain 1 extra <c=energy>ENERGY</c> every turn. At the start of each turn: Gain 1 <c=status>EVADE</c> if you have none. <c=downside>If you didn't move at all last turn, receive 1 hull damage.</c>\n<c=a0a0a0>Be quick, or be dead.</c>"
+    },
+    "LastStand": {
+      "name": "LAST STAND",
+      "description": "The first time you receive a lethal hit in each zone: Gain 1 <c=status>PERFECT SHIELD</c> for the rest of the turn, and <c=heal>heal to full</c>.\n<c=a0a0a0>Dying is not an excuse, nor an escape. There's still a job to do.</c>"
+    },
+    "DefenseProtocol": {
+      "name": "RETALIATION PROTOCOL",
+      "description": "<c=keyword>Vanguard</c> exclusive.\nYour <c=part>wings</c> gain <c=parttrait>armor</c>. At the start of every turn: gain 1 <c=status>TEMPORARY PAYBACK</c>.\n<c=a0a0a0>Don't be a pushover. Stand your ground.</c>"
+    },
+    "ModuleStealer": {
+      "name": "MODULE STEALER",
+      "description": "Defeating opponents gives you an option to improve the ship, depending on the enemy defeated. You can see all collected modules here.\n<c=a0a0a0>Let me put you back together, then take you apart all over again.</c>"
+    }
+  },
+  "card": {
+    "BasicMissileCard": {
+      "name": "Basic Missile"
+    },
+    "BasicDroneCard": {
+      "name": "Basic Drone"
+    }
+  }
+}
