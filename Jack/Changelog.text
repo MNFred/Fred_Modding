@@ -1,0 +1,11 @@
+-- 2.4.0 --
+> Added small functionality to AP Missile involving enemy armor
+> Slightly reworked Blank Missile to now work with Lock-On
+> Changed how card "On My Mark" works
+> Slight nerf to "Dodge Roll"
+> Barely noticable dialogue changes
+> "Rapid Reload" card buffed slightly to bring all cards with spawn action from the piles
+> Minor changes to "Radar AMP" B upgrade
+> Shortened The event dialogue
+> Slightly changed the event
+- Fixed jack's Boss artifact turning hostile missiles into seekers

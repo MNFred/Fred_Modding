@@ -1,0 +1,15 @@
+C:\Users\Admin\Desktop\Jack2 (1)\obj\Debug\net8.0\Jack.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Jack2 (1)\obj\Debug\net8.0\Jack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Jack2 (1)\obj\Debug\net8.0\Jack.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Jack2 (1)\obj\Debug\net8.0\Jack.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Jack2 (1)\obj\Debug\net8.0\Jack.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Jack2 (1)\obj\Debug\net8.0\Jack.sourcelink.json
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.sourcelink.json
+C:\Users\Admin\Desktop\Jack\bin\Debug\net8.0\Jack.deps.json
+C:\Users\Admin\Desktop\Jack\bin\Debug\net8.0\Jack.dll
+C:\Users\Admin\Desktop\Jack\obj\Debug\net8.0\Jack.dll

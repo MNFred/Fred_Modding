@@ -1,0 +1,156 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {
+      "Fayti1703.AssemblyTasks/1.1.0": {
+        "type": "package",
+        "build": {
+          "build/Fayti1703.AssemblyTasks.targets": {}
+        }
+      },
+      "Nanoray.ExtractSingleFileApplicationResourceTask/1.0.0": {
+        "type": "package",
+        "build": {
+          "build/Nanoray.ExtractSingleFileApplicationResourceTask.targets": {}
+        }
+      },
+      "Nickel.ModBuildConfig/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Fayti1703.AssemblyTasks": "1.1.0",
+          "Nanoray.ExtractSingleFileApplicationResourceTask": "1.0.0"
+        },
+        "build": {
+          "build/Nickel.ModBuildConfig.targets": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Fayti1703.AssemblyTasks/1.1.0": {
+      "sha512": "U4vvSx3nhLFMHlnrMSKlFa0Jfu1l7dGZPxmnA+zVswJJDUbbmoupGugt2yXCzlWUJar30IIs2k9f/NhqbWcQrA==",
+      "type": "package",
+      "path": "fayti1703.assemblytasks/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "build/Fayti1703.AssemblyTasks.dll",
+        "build/Fayti1703.AssemblyTasks.targets",
+        "build/Mono.Cecil.Pdb.dll",
+        "build/Mono.Cecil.dll",
+        "fayti1703.assemblytasks.1.1.0.nupkg.sha512",
+        "fayti1703.assemblytasks.nuspec"
+      ]
+    },
+    "Nanoray.ExtractSingleFileApplicationResourceTask/1.0.0": {
+      "sha512": "0U6jrrA25UVpCSz+nxjB4dISGulsWnlgzyff01+49azDh+glCA3Jp1r7cUgmlMob9HhcrCUBTvqg4/GU4KDE/A==",
+      "type": "package",
+      "path": "nanoray.extractsinglefileapplicationresourcetask/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "build/Nanoray.ExtractSingleFileApplicationResourceTask.dll",
+        "build/Nanoray.ExtractSingleFileApplicationResourceTask.targets",
+        "build/SingleFileExtractor.Core.dll",
+        "nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
+        "nanoray.extractsinglefileapplicationresourcetask.nuspec"
+      ]
+    },
+    "Nickel.ModBuildConfig/1.2.1": {
+      "sha512": "OFE/Fl4ZFvG7fKZ7rNPC2LOo78YXrCQAgIjKjxiwLVOWgUnMQ+BX7tvWC1P4TrmtnuW8t05ICnrwh5G6Xd1EPQ==",
+      "type": "package",
+      "path": "nickel.modbuildconfig/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "analyzers/dotnet/cs/Nickel.ModBuildConfig.Analyzer.dll",
+        "build/FindModLoaderPath.targets",
+        "build/Newtonsoft.Json.dll",
+        "build/Nickel.ModBuildConfig.dll",
+        "build/Nickel.ModBuildConfig.targets",
+        "nickel.modbuildconfig.1.2.1.nupkg.sha512",
+        "nickel.modbuildconfig.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0": [
+      "Nanoray.ExtractSingleFileApplicationResourceTask >= 1.0.0",
+      "Nickel.ModBuildConfig >= 1.2.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "2.3.5",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\Jack\\Jack.csproj",
+      "projectName": "Jack",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\Jack\\Jack.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\Jack\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {}
+        }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {
+          "Nanoray.ExtractSingleFileApplicationResourceTask": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "Nickel.ModBuildConfig": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

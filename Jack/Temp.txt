@@ -1,0 +1,288 @@
+// Decompiled with JetBrains decompiler
+// Type: Fred.Jack_Copper.JackEvent
+// Assembly: JaCk, Version=2.3.4.0, Culture=neutral, PublicKeyToken=null
+// MVID: 643006C4-753C-4ED5-B46E-8601983E834D
+// Assembly location: C:\Users\Admin\Downloads\Jack-34-2-3-4-1741629057\JaCk\JaCk.dll
+
+using HarmonyLib;
+using Nanoray.PluginManager;
+using Nickel;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Runtime.InteropServices;
+
+#nullable enable
+namespace Fred.Jack
+{
+  internal sealed class JackEvent : IRegisterable
+  {
+    private static string EventName;
+
+    public static void Register(IPluginPackage<IModManifest> package, IModHelper helper)
+    {
+      JackEvent.EventName = package.Manifest.UniqueName + "::" + MethodBase.GetCurrentMethod().DeclaringType.Name;
+      string uniqueName = ((IModOwned) ModEntry.Instance.JackCopper_Deck).UniqueName;
+      Dictionary<string, StoryNode> all = DB.story.all;
+      string eventName = JackEvent.EventName;
+      StoryNode storyNode = new StoryNode();
+      storyNode.type = NodeType.@event;
+      storyNode.canSpawnOnMap = new bool?(true);
+      storyNode.zones = new HashSet<string>()
+      {
+        "zone_lawless",
+        "zone_three"
+      };
+      storyNode.allPresent = new HashSet<string>()
+      {
+        uniqueName
+      };
+      storyNode.oncePerRun = true;
+      List<Instruction> list = new List<Instruction>();
+      CollectionsMarshal.SetCount<Instruction>(list, 12);
+      Span<Instruction> span = CollectionsMarshal.AsSpan<Instruction>(list);
+      int index1 = 0;
+      ref Instruction local1 = ref span[index1];
+      CustomSay customSay1 = new CustomSay();
+      customSay1.who = "comp";
+      customSay1.loopTag = "neutral";
+      customSay1.Text = "Someone's hailing us over.";
+      local1 = (Instruction) customSay1;
+      int index2 = index1 + 1;
+      ref Instruction local2 = ref span[index2];
+      CustomSay customSay2 = new CustomSay();
+      customSay2.who = "crew";
+      customSay2.loopTag = "squint";
+      customSay2.Text = "Is that a pirate?";
+      local2 = (Instruction) customSay2;
+      int index3 = index2 + 1;
+      ref Instruction local3 = ref span[index3];
+      CustomSay customSay3 = new CustomSay();
+      customSay3.who = "JackE";
+      customSay3.flipped = true;
+      customSay3.loopTag = "neutral";
+      customSay3.Text = "Wrong, just someone looking for pirates.";
+      local3 = (Instruction) customSay3;
+      int index4 = index3 + 1;
+      ref Instruction local4 = ref span[index4];
+      CustomSay customSay4 = new CustomSay();
+      customSay4.who = uniqueName;
+      customSay4.loopTag = "shocked";
+      customSay4.Text = "Huh.";
+      local4 = (Instruction) customSay4;
+      int index5 = index4 + 1;
+      ref Instruction local5 = ref span[index5];
+      CustomSay customSay5 = new CustomSay();
+      customSay5.who = "JackE";
+      customSay5.flipped = true;
+      customSay5.loopTag = "neutral";
+      customSay5.Text = "You guys look like someone who could use some quick repairs.";
+      local5 = (Instruction) customSay5;
+      int index6 = index5 + 1;
+      ref Instruction local6 = ref span[index6];
+      CustomSay customSay6 = new CustomSay();
+      customSay6.who = "JackE";
+      customSay6.flipped = true;
+      customSay6.loopTag = "squint";
+      customSay6.Text = "Don't worry. You'll get to keep 99% of your ship.";
+      local6 = (Instruction) customSay6;
+      int index7 = index6 + 1;
+      ref Instruction local7 = ref span[index7];
+      CustomSay customSay7 = new CustomSay();
+      customSay7.who = "comp";
+      customSay7.loopTag = "squint";
+      customSay7.Text = "I'm not sure about this.";
+      local7 = (Instruction) customSay7;
+      int index8 = index7 + 1;
+      ref Instruction local8 = ref span[index8];
+      CustomSay customSay8 = new CustomSay();
+      customSay8.who = uniqueName;
+      customSay8.loopTag = "confused";
+      customSay8.Text = "Am I the only one seeing this?";
+      local8 = (Instruction) customSay8;
+      int index9 = index8 + 1;
+      ref Instruction local9 = ref span[index9];
+      CustomSay customSay9 = new CustomSay();
+      customSay9.who = "comp";
+      customSay9.loopTag = "squint";
+      customSay9.Text = "Seems rather sketchy.";
+      local9 = (Instruction) customSay9;
+      int index10 = index9 + 1;
+      ref Instruction local10 = ref span[index10];
+      CustomSay customSay10 = new CustomSay();
+      customSay10.who = "JackE";
+      customSay10.flipped = true;
+      customSay10.loopTag = "neutral";
+      customSay10.Text = "Probably, but you never know, I might be the only kind soul around.";
+      local10 = (Instruction) customSay10;
+      int index11 = index10 + 1;
+      ref Instruction local11 = ref span[index11];
+      CustomSay customSay11 = new CustomSay();
+      customSay11.who = "comp";
+      customSay11.loopTag = "squint";
+      customSay11.Text = "Fine. Show us these 'services'.";
+      local11 = (Instruction) customSay11;
+      int index12 = index11 + 1;
+      ref Instruction local12 = ref span[index12];
+      CustomSay customSay12 = new CustomSay();
+      customSay12.who = "JackE";
+      customSay12.flipped = true;
+      customSay12.loopTag = "neutral";
+      customSay12.Text = "Alright, so what'll it be?";
+      local12 = (Instruction) customSay12;
+      int num = index12 + 1;
+      storyNode.lines = list;
+      storyNode.choiceFunc = JackEvent.EventName;
+      all[eventName] = storyNode;
+      DB.eventChoiceFns[JackEvent.EventName] = AccessTools.DeclaredMethod(MethodBase.GetCurrentMethod().DeclaringType, "GetChoices", (Type[]) null, (Type[]) null);
+    }
+
+    public static void UpdateSettings(
+      IPluginPackage<IModManifest> package,
+      IModHelper helper,
+      ProfileSettings settings)
+    {
+      StoryNode storyNode = DB.story.all[JackEvent.EventName];
+      storyNode.never = settings.JackParadox ? new bool?() : new bool?(true);
+      storyNode.dontCountForProgression = true;
+    }
+
+    private static List<Choice> GetChoices(State state)
+    {
+      List<Choice> list1 = new List<Choice>();
+      CollectionsMarshal.SetCount<Choice>(list1, 3);
+      Span<Choice> span1 = CollectionsMarshal.AsSpan<Choice>(list1);
+      int index1 = 0;
+      ref Choice local1 = ref span1[index1];
+      int num1;
+      Choice choice1;
+      if (!state.GetHardEvents())
+      {
+        Choice choice2 = new Choice();
+        choice2.label = ModEntry.Instance.Localizations.Localize((IReadOnlyList<string>) new \u003C\u003Ez__ReadOnlyArray<string>(new string[3]
+        {
+          "event",
+          nameof (JackEvent),
+          "Choice-HelpRemovalA"
+        }), (object) null);
+        Choice choice3 = choice2;
+        List<CardAction> list2 = new List<CardAction>();
+        CollectionsMarshal.SetCount<CardAction>(list2, 3);
+        Span<CardAction> span2 = CollectionsMarshal.AsSpan<CardAction>(list2);
+        int index2 = 0;
+        span2[index2] = (CardAction) new ARemoveCard();
+        int index3 = index2 + 1;
+        span2[index3] = (CardAction) new ARemoveCard();
+        int index4 = index3 + 1;
+        span2[index4] = (CardAction) new AHurt()
+        {
+          hurtAmount = 2,
+          targetPlayer = true
+        };
+        num1 = index4 + 1;
+        choice3.actions = list2;
+        choice1 = choice2;
+      }
+      else
+      {
+        Choice choice4 = new Choice();
+        choice4.label = ModEntry.Instance.Localizations.Localize((IReadOnlyList<string>) new \u003C\u003Ez__ReadOnlyArray<string>(new string[3]
+        {
+          "event",
+          nameof (JackEvent),
+          "Choice-HelpRemovalB"
+        }), (object) null);
+        Choice choice5 = choice4;
+        List<CardAction> list3 = new List<CardAction>();
+        CollectionsMarshal.SetCount<CardAction>(list3, 2);
+        Span<CardAction> span3 = CollectionsMarshal.AsSpan<CardAction>(list3);
+        int index5 = 0;
+        span3[index5] = (CardAction) new ARemoveCard();
+        int index6 = index5 + 1;
+        span3[index6] = (CardAction) new AHurt()
+        {
+          hurtAmount = 2,
+          targetPlayer = true
+        };
+        num1 = index6 + 1;
+        choice5.actions = list3;
+        choice1 = choice4;
+      }
+      local1 = choice1;
+      int index7 = index1 + 1;
+      ref Choice local2 = ref span1[index7];
+      Choice choice6;
+      if (!state.GetHardEvents())
+      {
+        Choice choice7 = new Choice();
+        choice7.label = ModEntry.Instance.Localizations.Localize((IReadOnlyList<string>) new \u003C\u003Ez__ReadOnlyArray<string>(new string[3]
+        {
+          "event",
+          nameof (JackEvent),
+          "Choice-AvoidCombatA"
+        }), (object) null);
+        Choice choice8 = choice7;
+        List<CardAction> list4 = new List<CardAction>();
+        CollectionsMarshal.SetCount<CardAction>(list4, 2);
+        Span<CardAction> span4 = CollectionsMarshal.AsSpan<CardAction>(list4);
+        int index8 = 0;
+        span4[index8] = (CardAction) new AHeal()
+        {
+          healAmount = state.ship.hullMax,
+          targetPlayer = true
+        };
+        int index9 = index8 + 1;
+        span4[index9] = (CardAction) new AAddCard()
+        {
+          card = (Card) new NonTempTrash(),
+          amount = 1
+        };
+        num1 = index9 + 1;
+        choice8.actions = list4;
+        choice6 = choice7;
+      }
+      else
+      {
+        Choice choice9 = new Choice();
+        choice9.label = ModEntry.Instance.Localizations.Localize((IReadOnlyList<string>) new \u003C\u003Ez__ReadOnlyArray<string>(new string[3]
+        {
+          "event",
+          nameof (JackEvent),
+          "Choice-AvoidCombatB"
+        }), (object) null);
+        Choice choice10 = choice9;
+        List<CardAction> list5 = new List<CardAction>();
+        CollectionsMarshal.SetCount<CardAction>(list5, 2);
+        Span<CardAction> span5 = CollectionsMarshal.AsSpan<CardAction>(list5);
+        int index10 = 0;
+        span5[index10] = (CardAction) new AHeal()
+        {
+          healAmount = (state.ship.hullMax / 2),
+          targetPlayer = true
+        };
+        int index11 = index10 + 1;
+        span5[index11] = (CardAction) new AAddCard()
+        {
+          card = (Card) new NonTempTrash(),
+          amount = 1
+        };
+        num1 = index11 + 1;
+        choice10.actions = list5;
+        choice6 = choice9;
+      }
+      local2 = choice6;
+      int index12 = index7 + 1;
+      span1[index12] = new Choice()
+      {
+        label = ModEntry.Instance.Localizations.Localize((IReadOnlyList<string>) new \u003C\u003Ez__ReadOnlyArray<string>(new string[3]
+        {
+          "event",
+          nameof (JackEvent),
+          "Choice-LeaveEvent"
+        }), (object) null)
+      };
+      int num2 = index12 + 1;
+      return list1;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "character": {
+    "JackE": {
+      "name": "Jack"
+    },
+    "Jack": {
+      "name": "Jack",
+      "description": "<c=0cd85d>JACK</c>\nYour Military Missiler. Specializes in <c=keyword>launching</c> and <c=keyword>powering up</c> <c=midrow>missiles</c>, as well as <c=keyword>destruction</c> and <c=keyword>manipulation</c> of <c=midrow>midrow objects</c>."
+    }
+  },
+  "card": {
+    "APMissileCard": {
+      "name": "AP Missile"
+    },
+    "DodgeRoll": {
+      "name": "DodgeRoll"
+    },
+    "BackUpMissile": {
+      "name": "BackUp Stock",
+      "description": {
+        "None": "Add a <c=cardtrait>temporary</c> <c=card>BackUp Missile</c> to your <c=keyword>hand</c>.",
+        "A": "Add a <c=cardtrait>temporary</c> <c=card>BackUp Missile A</c> to your <c=keyword>hand</c>.",
+        "B": "Add 2 <c=cardtrait>temporary</c> <c=card>BackUp Missile</c> to your <c=keyword>draw pile</c>."
+      }
+    },
+    "BackUpMissileCard": {
+      "name": "BackUp Missile"
+    },
+    "MissileThrow": {
+      "name": "Missile Throw"
+    },
+    "PrecisionCard": {
+      "name": "Precision"
+    },
+    "JackEXE": {
+      "name": "Jack.EXE",
+      "description": {
+        "None": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=0cd85d>JACK</c> cards to your hand.",
+        "A": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=0cd85d>JACK</c> cards to your hand.",
+        "B": "Add 1 of 3 <c=cardtrait>discount, temp</c> <c=0cd85d>JACK</c> cards to your hand."
+      }
+    },
+    "BlankMissile": {
+      "name": "Blank Missile"
+    },
+    "HiJackControls": {
+      "name": "HiJack Controls"
+    },
+    "TargetPractice": {
+      "name": "Target Practice"
+    },
+    "RadarOverclock": {
+      "name": "Radar Overclock"
+    },
+    "RemoteActivation": {
+      "name": "Remote Activation",
+      "description": {
+        "None": "All <c=midrow>objects</c> aligned with the enemy take a turn.",
+        "A": "All <c=midrow>objects</c> aligned with the enemy take a turn.",
+        "B": "All <c=midrow>objects</c> aligned with you take a turn."
+      }
+    },
+    "HeavyShift": {
+      "name": "Heavy Shift"
+    },
+    "MissileSalvo": {
+      "name": "Missile Salvo"
+    },
+    "MissileBarrage": {
+      "name": "Missile Barrage"
+    },
+    "RapidReload": {
+      "name": "Rapid Reload",
+      "description": {
+        "None": "Bring all <c=action>spawn</c> cards from <c=keyword>discard pile</c> into your hand.",
+        "A": "Bring all <c=action>spawn</c> cards from <c=keyword>discard pile</c> into your hand.",
+        "B": "Bring all <c=action>spawn</c> cards from <c=keyword>draw pile</c> into your hand."
+      }
+    },
+    "OnMyMark": {
+      "name": "On My Mark"
+    },
+    "BalisticMissileCard": {
+      "name": "Ballistic Missile"
+    },
+    "CorrosonMissileCard": {
+      "name": "Corrosive Missile"
+    },
+    "ScanBoostCard": {
+      "name": "Signal Boost"
+    },
+    "SteadyAim": {
+      "name": "Steady Aim",
+      "description": {
+        "None": "Add 2 <c=cardtrait>temporary</c> <c=card>Target Practice</c> to your <c=keyword>draw pile</c>.",
+        "A": "Add 3 <c=cardtrait>temporary</c> <c=card>Target Practice</c> to your <c=keyword>draw pile</c>.",
+        "B": "Add 2 <c=cardtrait>temporary</c> <c=card>Target Practice B</c> to your <c=keyword>draw pile</c>."
+      }
+    },
+    "ClusterMissileCard": {
+      "name": "Cluster Missile"
+    },
+    "ClearPerimiter": {
+      "name": "Clear The Perimiter",
+      "description": {
+        "None": "Destroy every <c=midrow>object</c> aligned with your ship.",
+        "A": "Destroy every <c=midrow>object</c> aligned with your ship.",
+        "B": "Gain 1 <c=status>droneshift</c> for every <c=midrow>object</c> aligned with your ship."
+      }
+    },
+    "RadarAmp": {
+      "name": "Radar AMP"
+    }
+  },
+  "artifact": {
+    
+  },
+  "status": {
+    "ScanBoost": {
+      "name": "Signal Boost",
+      "description": "Gain {0} <c=status>DRONESHIFT</c> every turn."
+    },
+    "LockOn": {
+      "name": "Lock-On",
+      "description": "Missiles do <c=damage>+{0} damage</c> to this ship. <c=downside>Decreases by 1 at the start of every turn.</c>"
+    },
+    "ALockOn": {
+      "name": "Advanced Lock-On",
+      "description": "Missiles do <c=damage>+{0} damage</c> to this ship."
+    },
+    "LoseDroneNext": {
+      "name": "Signal Disruption",
+      "description": "<c=downside>At the start of next turn, lose all <c=status>DRONESHIFT</c>.</c>"
+    },
+    "MidrowHalt": {
+      "name": "Midrow Halt",
+      "description": "While you have this status, <c=midrow>midrow</c> will not take a turn. <c=downside>Decreases by 1 at the start of every turn.</c>"
+    }
+  },
+  "action": {
+    "ClearWay": {
+      "name": "BAY CLEARENCE",
+      "description": "If there's a <c=midrow>midrow object</c> blocking the bay, destroy it."
+    }
+  },
+  "midrow": {
+    "Dome": {
+      "name": "D.O.M.E",
+      "description": "Applies <c=midrow>Bubble Shield</c> to all <c=midrow>objects</c> when destroyed. <c=downside>After 3 turns, destroying it will destroy all <c=midrow>objects</c> instead.</c>"
+    },
+    "ClusterMissile": {
+      "name": "Cluster Missile",
+      "description": "This missile is going to deal <c=damage>3</c> damage, when destroyed, splits into 3 <c=midrow>Mini Missiles</c>."
+    },
+    "MiniMissile": {
+      "name": "Mini Missile",
+      "description": "This missile is going to deal <c=damage>1</c> damage."
+    },
+    "APMissile": {
+      "name": "AP Missile",
+      "description": "This missile is going to deal <c=damage>1</c> <c=action>piercing</c> damage, if the part hit has <c=parttrait>armor</c>, remove it."
+    },
+    "BlankMissile": {
+      "name": "Blank Missile",
+      "description": "This missile is going to deal <c=damage>2</c> damage, but something needs to hit it for it to activate."
+    },
+    "BallisticMissileN": {
+      "name": "Ballistic Missile",
+      "description": "This missile is going to deal <c=damage>6</c> damage, will sit for 1 turn idling."
+    },
+    "BallisticMissileY": {
+      "name": "Ballistic Missile",
+      "description": "This missile is going to deal <c=damage>6</c> damage, <c=downside>ready to fire.</c>"
+    }
+  }
+}
