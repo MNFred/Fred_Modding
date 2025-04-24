@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using Fred.Jack.Artifacts;
 
 namespace Fred.Jack.features
 {
@@ -22,6 +24,16 @@ namespace Fred.Jack.features
           else return 0;
         }else return 0;
       }),0);
+      ModEntry.Instance.Helper.Events.RegisterBeforeArtifactsHook("ModifyBaseDamage", (int baseDamage, Card? card, State state, Combat? combat, bool fromPlayer) =>
+      {
+        if (state.EnumerateAllArtifacts().FirstOrDefault(a => a is SecondaryReticle) is { } artifact)
+        {
+          if(fromPlayer)
+          {
+            return combat!.otherShip.Get(ModEntry.Instance.LockOnStatus.Status)/2;
+          }else return 0;
+        }else return 0;
+      },0);
     }
 
     public bool HandleStatusTurnAutoStep(State state, Combat combat, StatusTurnTriggerTiming timing, Ship ship, Status status, ref int amount, ref StatusTurnAutoStepSetStrategy setStrategy)
@@ -32,7 +44,12 @@ namespace Fred.Jack.features
         return false;
       if(state.ship.Get(Status.timeStop) > 0)
         return false;
-      --amount;
+      if (state.EnumerateAllArtifacts().FirstOrDefault(a => a is CrystalReticle) is { } artifact)
+      {
+        amount = 0;
+      }else{
+        --amount;
+      }
       return false;
     }
   }

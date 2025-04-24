@@ -1,11 +1,13 @@
 {
   "character": {
-    "JackE": {
-      "name": "Jack"
-    },
     "Jack": {
       "name": "Jack",
       "description": "<c=0cd85d>JACK</c>\nYour Military Missiler. Specializes in <c=keyword>launching</c> and <c=keyword>powering up</c> <c=midrow>missiles</c>, as well as <c=keyword>destruction</c> and <c=keyword>manipulation</c> of <c=midrow>midrow objects</c>."
+    }
+  },
+  "eventGuy": {
+    "JackE": {
+      "name": "Jack"
     }
   },
   "card": {
@@ -13,18 +15,21 @@
       "name": "AP Missile"
     },
     "DodgeRoll": {
-      "name": "DodgeRoll"
+      "name": "Dodgeroll"
     },
     "BackUpMissile": {
       "name": "BackUp Stock",
       "description": {
-        "None": "Add a <c=cardtrait>temporary</c> <c=card>BackUp Missile</c> to your <c=keyword>hand</c>.",
-        "A": "Add a <c=cardtrait>temporary</c> <c=card>BackUp Missile A</c> to your <c=keyword>hand</c>.",
-        "B": "Add 2 <c=cardtrait>temporary</c> <c=card>BackUp Missile</c> to your <c=keyword>draw pile</c>."
+        "None": "Add a <c=cardtrait>temporary</c> <c=card>Backup Missile</c> to your <c=keyword>hand</c>.",
+        "A": "Add a <c=cardtrait>temporary</c> <c=card>Backup Missile A</c> to your <c=keyword>hand</c>.",
+        "B": "Add 2 <c=cardtrait>temporary</c> <c=card>Backup Missile</c> to your <c=keyword>draw pile</c>."
       }
     },
+    "CardDOME": {
+      "name": "D.O.M.E"
+    },
     "BackUpMissileCard": {
-      "name": "BackUp Missile"
+      "name": "Backup Missile"
     },
     "MissileThrow": {
       "name": "Missile Throw"
@@ -113,7 +118,66 @@
     }
   },
   "artifact": {
-    
+    "SpareAmmo": {
+      "name": "SPARE AMMUNITION",
+      "description": "At the start of the first 3 turns: If you didn't draw any <c=0cd85d>JACK</c> cards, gain <c=cardtrait>temporary</c> <c=card>Backup Missile</c>. Otherwise, gain 1 <c=status>DRONESHIFT</c>."
+    },
+    "TripleTag": {
+      "name": "TRIPLE TAG",
+      "description": "At the start of combat: Add 1 <c=card>Precision</c> to your <c=keyword>draw pile</c>, <c=keyword>discard pile</c>, and <c=keyword>hand</c>."
+    },
+    "PreloadedBays": {
+      "name": "PRELOADED BAYS",
+      "description": "AT the start of combat: <c=cardtrait>discount</c> all cards with a <c=action>launch</c> action by 1."
+    },
+    "CoordinatedLaunch": {
+      "name": "COORDINATED LAUNCH",
+      "description": "The first time you spawn an object each turn: gain 1 <c=status>DRONESHIFT</c>."
+    },
+    "NeverMissile": {
+      "name": "NEVER MISS-ILE",
+      "description": "At the end of your turn: The 2 leftmost <c=midrow>missiles</c> turn into <c=midrow>seekers</c> if they would miss otherwise."
+    },
+    "DOMEArtifact": {
+      "name": "D.O.M.E PROJECT",
+      "description": "Add a <c=card>D.O.M.E</c> to your deck."
+    },
+    "HeavyImpact": {
+      "name": "HEAVY IMPACT",
+      "description": "<c=midrow>Missiles</c> will trigger charges if they hit parts adjacent to them."
+    },
+    "CrystalReticle": {
+      "name": "CRYSTAL RETICLE",
+      "description": "At the end of your turn, convert all your <c=status>SHARD</c> into <c=status>LOCK-ON</c>. <c=downside><c=status>LOCK-ON</c> now disappears completely at the start of each turn."
+    },
+    "ScrapArmor": {
+      "name": "SCRAP ARMOR",
+      "description": "Gain: 1 <c=status>SHIELD</c> when you spawn an <c=midrow>asteroid</c>, 1 <c=status>TEMP SHIELD</c> whne you spawn a <c=midrow>missile</c> and 1 <c=status>MAX SHIELD</c> when you spawn anything else."
+    },
+    "SecondaryReticle": {
+      "name": "SECONDARY RETICLE",
+      "description": "Every 2 <c=status>OVERDRIVE</c> increases the damage of all your <c=midrow>missiles</c> by 1. Every 2 <c=status>LOCK-ON</c> increases the damage of all your attacks by 1."
+    },
+    "AimBot": {
+      "name": "AIMBOT",
+      "description": "After a card with <c=cardtrait>exhaust</c> is played, apply 1 <c=status>LOCK-ON</c> to the enemy. Apply 1 <c=status>ADVANCED LOCK-ON</c> instead if the card has <c=cardtrait>single-use</c>."
+    },
+    "SimulatedReinforcement": {
+      "name": "SIMULATED REINFORCEMENT",
+      "description": "The second time you play a <c=cardtrait>temporary</c> card each turn, add a <c=cardtrait>single-use</c> <c=card>Precision</c> to your <c=keyword>hand</c>."
+    },
+    "MissileHeatSinks": {
+      "name": "MISSILE HEATSINKS",
+      "description": "Every 3rd <c=midrow>missile</c> launched removes 1 <c=status>HEAT</c> from you. If you're at 3 or more <c=status>HEAT</c>, increase the damage of all <c=midrow>missiles</c> by 1."
+    },
+    "ToyMissile": {
+      "name": "TOY MISSILE",
+      "description": "All cards that <c=action>launch</c> an object are also <c=cardtrait>wild</c>."
+    },
+    "ObjectScanner": {
+      "name": "OBJECT SCANNER",
+      "description": "At the end of each turn: Gain 1 <c=status>DRAW NEXT TURN</c> for every object in the midrow (up to 3)."
+    }
   },
   "status": {
     "ScanBoost": {
@@ -146,7 +210,7 @@
   "midrow": {
     "Dome": {
       "name": "D.O.M.E",
-      "description": "Applies <c=midrow>Bubble Shield</c> to all <c=midrow>objects</c> when destroyed. <c=downside>After 3 turns, destroying it will destroy all <c=midrow>objects</c> instead.</c>"
+      "description": "Applies <c=midrow>Bubble Shield</c> to all <c=midrow>objects</c> when destroyed. <c=downside>After 3 turns, destroying it will destroy all <c=midrow>objects</c> instead.</c> Cannot target other <c=midrow>D.O.M.Es</c>."
     },
     "ClusterMissile": {
       "name": "Cluster Missile",

@@ -1,10 +1,7 @@
 ﻿ using HarmonyLib;
  using Nanoray.PluginManager;
- using Newtonsoft.Json;
  using Nickel;
- using System;
  using System.Collections.Generic;
- using System.Linq;
  using System.Reflection;
 
  namespace Fred.Jack;
@@ -21,45 +18,45 @@
  		{
  			type = NodeType.@event,
  			canSpawnOnMap = true,
-      zones = ["zone_lawless", "zone_three"],
+      		zones = ["zone_lawless", "zone_three"],
  			oncePerRun = true,
  			lines = [
- 				new CustomSay
- 				{
- 					who = "JackE",
- 					loopTag = "neutral",
- 					flipped = true,
- 					Text = "Ahoy strangers."
- 				},
-        new CustomSay()
-        {
-          who = "comp",
-          Text = "What?",
-          loopTag = "squint"
-        },
- 				new CustomSay
- 				{
- 					who = "JackE",
- 					loopTag = "neutral",
-          flipped = true,
- 					Text = "I provide services. Care to try?"
- 				},
-        new CustomSay()
-        {
-          who = "comp",
-          Text = "Do we?",
-          loopTag = "squint"
-        },
-        new CustomSay()
-        {
-          who = "JackE",
-          Text = "",
-          flipped = true,
-          loopTag = "neutral"
-        }
- 			],
- 			choiceFunc = EventName
- 		};
+ 			new CustomSay
+ 			{
+ 				who = "JackE",
+ 				loopTag = "neutral",
+ 				flipped = true,
+ 				Text = "Ahoy strangers."
+ 			},
+			new CustomSay()
+			{
+			who = "comp",
+			Text = "What?",
+			loopTag = "squint"
+			},
+			new CustomSay
+			{
+				who = "JackE",
+				loopTag = "neutral",
+				flipped = true,
+				Text = "I provide services. Care to try?"
+			},
+			new CustomSay()
+			{
+			who = "comp",
+			Text = "...?",
+			loopTag = "squint"
+			},
+			new CustomSay()
+			{
+			who = "JackE",
+			Text = "So what'd ya say?",
+			flipped = true,
+			loopTag = "neutral"
+			}
+			],
+				choiceFunc = EventName
+			};
 
  		DB.eventChoiceFns[EventName] = AccessTools.DeclaredMethod(MethodBase.GetCurrentMethod()!.DeclaringType!, nameof(GetChoices));
  	}
@@ -67,10 +64,10 @@
  		=> [
  			new Choice
  			{
- 				label = "Patch up the hull.\n-<c=heal>Heal to full</c>, gain <c=card>Debris</c>.",
- 				actions = [
- 					new AHeal{healAmount = state.ship.hullMax, targetPlayer = true},
-          new AAddCard{card = new NonTempTrash()}
+				label = "Patch up the hull.\n-<c=heal>Heal to full</c>, gain <c=card>Debris</c>.",
+				actions = [
+					new AHeal{healAmount = state.ship.hullMax, targetPlayer = true},
+					new AAddCard{card = new NonTempTrash()}
  				]
  			},
       new Choice
@@ -82,18 +79,11 @@
           new AHurt{hurtAmount = 3, targetPlayer = true}
         ]
       },
-      new Choice 
-      {
-        label = "Some system improvements.\n-2 random cards gain upgrade B.",
-        actions = [
-          new AUpgradeCardRandom{upgradePath = Upgrade.B, count = 2}
-        ]
-      },
       new Choice
       {
         label = "No, let's leave."
       }
- 		];
+ 	];
   public static void UpdateSettings(IPluginPackage<IModManifest> package, IModHelper helper, ProfileSettings settings)
 	{
 		var node = DB.story.all[EventName];

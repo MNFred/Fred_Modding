@@ -126,7 +126,7 @@ internal static class CombatDialogue
 				{
 					who = jack,
 					Text = "I don't wanna alarm anyone, but our pilot is gone.",
-					loopTag = "shocked"
+					loopTag = "shock"
 				},
         new CustomSay()
         {
@@ -178,7 +178,7 @@ internal static class CombatDialogue
         {
           who = max,
           Text = "Sometimes.",
-          loopTag = "explains"
+          loopTag = "neutral"
         }
 			}
 		};
@@ -383,7 +383,7 @@ internal static class CombatDialogue
         {
           who = jack,
           Text = "Can you guys move? I can't see the reticle.",
-          loopTag = "question"
+          loopTag = "squint"
         },
         new CustomSay()
         {
@@ -482,7 +482,7 @@ internal static class CombatDialogue
         {
           who = jack,
           Text = "If that heat reaches the missile compartment...",
-          loopTag = "shocked"
+          loopTag = "shock"
         },
         new CustomSay()
         {
@@ -624,7 +624,7 @@ internal static class CombatDialogue
         {
           who = jack,
           Text = "Sheesh.",
-          loopTag = "shocked"
+          loopTag = "shock"
         }
 			}
 		};
@@ -641,7 +641,7 @@ internal static class CombatDialogue
         {
           who = jack,
           Text = "That's gonna leave a mark.",
-          loopTag = "shocked"
+          loopTag = "shock"
         }
 			}
 		};

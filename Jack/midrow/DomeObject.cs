@@ -2,6 +2,7 @@
 using Nickel;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 
 namespace Fred.Jack.Midrow
@@ -38,15 +39,19 @@ namespace Fred.Jack.Midrow
     {
       if (this.counter >= 3)
       {
-        foreach (StuffBase stuffBase in c.stuff.Values)
+        foreach (StuffBase stuffBase in c.stuff.Values.ToList())
         {
-          if (stuffBase.x != worldX && stuffBase != null)
+          if (stuffBase.x != worldX && stuffBase != null && stuffBase is not DOME)
             c.DestroyDroneAt(s, stuffBase.x, false);
         }
         return null;
       }
       if (this.counter < 3)
-        c.QueueImmediate(new ABubbleField());
+        foreach (StuffBase stuffBase in c.stuff.Values.ToList())
+        {
+          if (stuffBase.x != worldX && stuffBase != null && stuffBase is not DOME)
+            stuffBase.bubbleShield = true;
+        }
       return null;
     }
 

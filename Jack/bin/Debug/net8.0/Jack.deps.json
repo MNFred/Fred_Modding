@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v8.0": {
-      "Jack/2.3.5": {
+      "Jack/2.4.0": {
         "dependencies": {
           "Nanoray.ExtractSingleFileApplicationResourceTask": "1.0.0",
           "Nickel.ModBuildConfig": "1.2.1"
@@ -26,7 +26,7 @@
     }
   },
   "libraries": {
-    "Jack/2.3.5": {
+    "Jack/2.4.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

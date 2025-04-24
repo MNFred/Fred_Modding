@@ -1,11 +1,12 @@
 -- 2.4.0 --
 > Added small functionality to AP Missile involving enemy armor
 > Slightly reworked Blank Missile to now work with Lock-On
+> Cluster Missile splits into 3 missiles evenly, and pushes away nearby objects by 1 when it splits
 > Changed how card "On My Mark" works
 > Slight nerf to "Dodge Roll"
 > Barely noticable dialogue changes
 > "Rapid Reload" card buffed slightly to bring all cards with spawn action from the piles
 > Minor changes to "Radar AMP" B upgrade
-> Shortened The event dialogue
-> Slightly changed the event
-- Fixed jack's Boss artifact turning hostile missiles into seekers
+> Slightly changed the event and its dialogue
+> Fixed jack's Boss artifact turning hostile missiles into seekers
+> Minor Changes to a few duo artifacts
