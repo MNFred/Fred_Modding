@@ -8,13 +8,17 @@
       "name": "Corsair",
       "description": "Made to match the speed of the tiderunner by using its chassis, but much more risky engines."
     },
-    "Vanguard": {
-      "name": "Vanguard",
-      "description": "A heavily armored defensive ship. Loses <c=card>Basic Dodge</c> and <c=card>Basic Shot</c> in order to have 2 extra <c=card>Basic Blocks</c>."
+    "Valkyrix": {
+      "name": "Valkyrix",
+      "description": "A heavily armored vessel, capable of sustaining a lethal hit. Loses <c=card>Basic Shot</c> in order to have 1 extra <c=card>Basic Block</c>."
     },
     "Chrysalis": {
       "name": "Chrysalis",
-      "description": "An amalgamate of no nature and no defining features. Improves upon when slaying opponents."
+      "description": "An amalgamate of no nature and no defining features. Improves its combat capabilities when destroying ships."
+    },
+    "Echo": {
+      "name": "Echo",
+      "description": "An ancient comms vessel, its console can easily repeat inputted commands."
     }
   },
   "choice": {
@@ -114,7 +118,7 @@
       },
       "ScarabModule": {
         "name": "SCARAB MODULE",
-        "description": "When playing a <c=keyword>Trash card</c>, gain 1 <c=status>OVERDRIVE</c> and 1 <c=status>TEMP SHIELD</c>. Overrides <c=artifact>PUPA MODULE</c>."
+        "description": "When playing a <c=keyword>Trash card</c>, gain 1 <c=status>OVERDRIVE</c> and 1 <c=status>TEMP SHIELD</c>. Overrides <c=artifact>PUPA MODULE</c> and blocks <c=artifact>PUPA MK.2 MODULE</c> from appearing."
       },
       "IonRangerModule": {
         "name": "ION MODULE",
@@ -143,15 +147,51 @@
       "HopperModule": {
         "name": "HOPPER MODULE",
         "description": "Every 3rd turn: gain 2 <c=status>AUTODODGE RIGHT</c>. Overrides <c=artifact>GNAT MODULE</c>.\n<c=a0a0a0>I hate this thing too.</c>"
+      },
+      "StriderModule": {
+        "name": "STRIDER MODULE",
+        "description": "Every 3rd turn: gain 1 <c=status>HERMES BOOTS</c>."
+      },
+      "FireFlyModule": {
+        "name": "FIREFLY MODULE",
+        "description": "On the first turn of combat: Gain 2 <c=status>SERENITY</c>."
+      },
+      "TuskenModule": {
+        "name": "TUSKEN MODULE",
+        "description": "At the start of 6th turn: Gain 2 <c=status>POWERDRIVE</c>."
+      },
+      "DishonorModule": {
+        "name": "MODULE OF DISHONOR",
+        "description": "Your right <c=part>CANNON</c> gains <c=parttrait>armor</c>."
+      },
+      "GooseModule": {
+        "name": "HONKING MODULE",
+        "description": "Choose a card in your deck to turn into <c=card>Annoyance A</c>. <artifact>:3</c>"
+      },
+      "InevitableModule": {
+        "name": "TIMESTOP MODULE",
+        "description": "On the first turn: gain 2 <c=status>TIME STOP</c>."
+      },
+      "NotGoatModule": {
+        "name": "TRANSMISSION MODULE",
+        "description": "<c=midrow>Space mines</c> and <c=midrow>missiles</c> deal 1 less damage to you. Start every combat with 2 <c=status>DRONESHIFT</c>."
+      },
+      "Pupa2Module": {
+        "name": "PUPA MK.2 Module",
+        "description": "When playing a <c=keyword>Trash card</c>, draw 1 and gain 1 <c=status>TEMP SHIELD</c>. Overrides <c=artifact>PUPA MODULE</c> and blocks <c=artifact>SCARAB MODULE</c> from appearing."
+      },
+      "OuroborosModule": {
+        "name": "RECURSIVE MODULE",
+        "description": "On the first turn, your rightmost card gains <c=cardtrait>recycle</c> for the rest of combat."
       }
     },
     "FoundryHeart": {
       "name": "HEART OF THE FOUNDRY",
-      "description": "You can restore <c=heal>3 max hull</c> at the shops. <c=downside>Every 3rd turn: Permanently lose 1 max hull.</c>\n<c=a0a0a0>Forever beating, even if at the cost of its own body.</c>"
+      "description": "You can restore <c=heal>3 max hull</c> at repair yards. <c=downside>Every 3rd turn: Permanently lose 1 max hull.</c>\n<c=a0a0a0>Forever beating, even if at the cost of its own body.</c>"
     },
     "AutoAssembly": {
       "name": "AUTOMATED ASSEMBLY",
-      "description": "At the end of each combat: You may choose a card, it will be destroyed, but you'll gain <c=hull>2 Max Hull</c>, then heal for triple its cost.\n<c=a0a0a0>Perhaps the factory is still functional after all, maybe you should use it to survive for even a bit longer.</c>"
+      "description": "At the end of each combat: You may choose a <c=cardtrait>non-temporary</c> card, it will be destroyed, but you'll gain <c=hull>2 Max Hull</c>, then heal for triple its cost.\n<c=a0a0a0>Adapt or die. This thing is falling apart at the seams.</c>"
     },
     "CorsairEngines": {
       "name": "CORSAIR ENGINES",
@@ -167,11 +207,23 @@
     },
     "DefenseProtocol": {
       "name": "RETALIATION PROTOCOL",
-      "description": "<c=keyword>Vanguard</c> exclusive.\nYour <c=part>wings</c> gain <c=parttrait>armor</c>. At the start of every turn: gain 1 <c=status>TEMPORARY PAYBACK</c>.\n<c=a0a0a0>Don't be a pushover. Stand your ground.</c>"
+      "description": "<c=keyword>Valkyrix</c> exclusive.\nYour <c=part>wings</c> gain <c=parttrait>armor</c>. At the start of combat: gain 1 <c=status>PAYBACK</c>.\n<c=a0a0a0>Don't be a pushover. Stand your ground.</c>"
     },
     "ModuleStealer": {
       "name": "MODULE STEALER",
       "description": "Defeating opponents gives you an option to improve the ship, depending on the enemy defeated. You can see all collected modules here.\n<c=a0a0a0>Let me put you back together, then take you apart all over again.</c>"
+    },
+    "EchoChamber": {
+      "name": "ECHO CHAMBER",
+      "description": "At the start of each turn: one card is drawn from the <c=keyword>discard pile</c> instead of the <c=keyword>draw pile</c> if possible.\n<c=a0a0a0>You shout into the void, but the only response is your own words.</c>"
+    },
+    "CallOfTheVoid": {
+      "name": "CALL OF THE VOID",
+      "description": "Replaces <c=artifact>ECHO CHAMBER</c>. At the start of each turn: one card is drawn from the <c=keyword>discard pile</c> instead of the <c=keyword>draw pile</c> if possible. Cards drawn this way that cost 3 or more <c=energy>ENERGY</c> are <c=cardtrait>discounted</c> by 1.\n<c=a0a0a0>You shout into the void. The replying voice is no longer your own.</c>"
+    },
+    "AncientRecall": {
+      "name": "ANCIENT RECALL",
+      "description": "The first time your <c=part>COMMS</c> get shot each combat: Return a random card from the <c=keyword>exhaust pile</c>.\n<c=a0a0a0>This ship isn't soundproof. I can hear you scream.</c>"
     }
   },
   "card": {

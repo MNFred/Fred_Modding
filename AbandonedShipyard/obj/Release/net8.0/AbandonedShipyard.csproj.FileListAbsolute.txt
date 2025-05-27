@@ -1,0 +1,9 @@
+C:\Users\Admin\Desktop\AbandonedShipyard\bin\Release\net8.0\AbandonedShipyard.deps.json
+C:\Users\Admin\Desktop\AbandonedShipyard\bin\Release\net8.0\AbandonedShipyard.dll
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.AssemblyInfo.cs
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.sourcelink.json
+C:\Users\Admin\Desktop\AbandonedShipyard\obj\Release\net8.0\AbandonedShipyard.dll

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MioxFqs/XYa9Kgg4mTZ3Ok9R+agSPLqxPlgC3PtuYBfYFWpcHOyWNjzCCzfcDeyyiZ16z0K8YyX7munHhaBWJA==",
+  "dgSpecHash": "m6qtv2zPuvzHFbJzVseO7ooJ6Mtm1uT8sJjtvImkHSBAhShdyw6rZ6rVLLK8MT4D2UuxjSStocJsrp/Dl0I8zQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\TH34\\TH34.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\AbandonedShipyard\\AbandonedShipyard.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",

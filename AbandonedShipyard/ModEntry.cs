@@ -21,17 +21,20 @@ public sealed class ModEntry : SimpleMod
     //Corsair
     internal IShipEntry Corsair_Ship { get; }
     //Vanguard
-    internal IShipEntry Vanguard_Ship { get; }
-    //
+    internal IShipEntry Valkyrix_Ship { get; }
+    //Chrysalis
     internal IShipEntry Chrysalis_Ship { get; }
     internal ISpriteEntry Chrysalis_Right_Wing { get; }
     internal IPartEntry ChrysEmpty { get; }
+    //Echo
+    internal IShipEntry Echo_Ship { get; }
     internal static IReadOnlyList<Type> Abandoned_Starter_Artifacts { get; } = [
         typeof(HeartOfFoundry),
         typeof(AutoAssembly),
         typeof(CorsairEngines),
         typeof(LastStand),
-        typeof(ModuleStealer)
+        typeof(ModuleStealer),
+        typeof(EchoChamber)
     ];
     internal static IReadOnlyList<Type> Module_Artifacts { get; } = [
         typeof(EmptyModule),
@@ -63,11 +66,23 @@ public sealed class ModEntry : SimpleMod
         typeof(DrillModule),
         typeof(RustingModule),
         typeof(BuriedModule),
-        typeof(HopperModule)
+        typeof(HopperModule),
+        typeof(StriderModule),
+        typeof(FireflyModule),
+        typeof(TuskenModule),
+        typeof(GooseModule),
+        typeof(InevitableModule),
+        typeof(NotGoatModule),
+        typeof(Pupa2Module),
+        typeof(OuroborosModule)
+    ];
+    internal static IReadOnlyList<Type> Abandoned_Common_Artifacts { get; } = [
+        typeof(AncientRecal),
+        typeof(DefenseProtocol)
     ];
     internal static IReadOnlyList<Type> Abandoned_Boss_Artifacts { get; } = [
         typeof(CorsairDrive),
-        typeof(DefenseProtocol)
+        typeof(CallOfTheVoid)
     ];
     internal static IReadOnlyList<Type> Abandoned_Cards { get; } = [
         typeof(BasicMissileCard),
@@ -78,6 +93,7 @@ public sealed class ModEntry : SimpleMod
     internal static IEnumerable<Type> Abandoned_AllArtifacts
         => Abandoned_Starter_Artifacts
         .Concat(Module_Artifacts)
+        .Concat(Abandoned_Common_Artifacts)
         .Concat(Abandoned_Boss_Artifacts);
     public ModEntry(IPluginPackage<IModManifest> package, IModHelper helper, ILogger logger) : base(package, helper, logger)
     {
@@ -171,7 +187,7 @@ public sealed class ModEntry : SimpleMod
         {
             Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Vanguard/Vanguard_Special.png")).Sprite
         });
-        var VanChassis = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Vanguard/Vanguard_Chassis.png")).Sprite;
+        var ValChassis = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Vanguard/Vanguard_Chassis.png")).Sprite;
         //Chrysalis
         var ChrysCockpit = helper.Content.Ships.RegisterPart("Chrys.Cockpit", new PartConfiguration()
         {
@@ -210,6 +226,28 @@ public sealed class ModEntry : SimpleMod
             Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Chrysalis/Chrysalis_Empty.png")).Sprite
         });
         var ChrysChassis = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Chrysalis/Chrysalis_Chassis.png")).Sprite;
+        //Echo
+        var EchoCockpit = helper.Content.Ships.RegisterPart("Echo.Cockpit", new PartConfiguration()
+        {
+            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Echo/Echo_Cockpit.png")).Sprite
+        });
+        var EchoCannon = helper.Content.Ships.RegisterPart("Echo.Cannon", new PartConfiguration()
+        {
+            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Echo/Echo_Cannon.png")).Sprite
+        });
+        var EchoEmpty = helper.Content.Ships.RegisterPart("Echo.Empty", new PartConfiguration()
+        {
+            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Echo/Echo_Scaffold.png")).Sprite
+        });
+        var EchoMissile = helper.Content.Ships.RegisterPart("Echo.Missile", new PartConfiguration()
+        {
+            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Echo/Echo_Missile.png")).Sprite
+        });
+        var EchoSpecial = helper.Content.Ships.RegisterPart("Echo.Special", new PartConfiguration()
+        {
+            Sprite = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Echo/Echo_Comms.png")).Sprite
+        });
+        var EchoChassis = helper.Content.Sprites.RegisterSprite(package.PackageRoot.GetRelativeFile("assets/Echo/Echo_Chassis.png")).Sprite;
         //The Foundry
         Foundry_Ship = helper.Content.Ships.RegisterShip("Foundry", new ShipConfiguration()
         {
@@ -347,8 +385,8 @@ public sealed class ModEntry : SimpleMod
             Name = AnyLocalizations.Bind(["ship", "Corsair", "name"]).Localize,
             Description = AnyLocalizations.Bind(["ship", "Corsair", "description"]).Localize
         });
-        //Vanguard
-        Vanguard_Ship = helper.Content.Ships.RegisterShip("Vanguard", new ShipConfiguration()
+        //Valkyrix
+        Valkyrix_Ship = helper.Content.Ships.RegisterShip("Valkyrix", new ShipConfiguration()
         {
             Ship = new StarterShip()
             {
@@ -404,7 +442,7 @@ public sealed class ModEntry : SimpleMod
                 {
                     new BasicShieldColorless(),
                     new BasicShieldColorless(),
-                    new BasicShieldColorless(),
+                    new DodgeColorless(),
                     new CannonColorless(),
                 },
                 artifacts =
@@ -418,9 +456,9 @@ public sealed class ModEntry : SimpleMod
                 typeof(LastStand),
                 typeof(DefenseProtocol)
             },
-            UnderChassisSprite = VanChassis,
-            Name = AnyLocalizations.Bind(["ship", "Vanguard", "name"]).Localize,
-            Description = AnyLocalizations.Bind(["ship", "Vanguard", "description"]).Localize
+            UnderChassisSprite = ValChassis,
+            Name = AnyLocalizations.Bind(["ship", "Valkyrix", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["ship", "Valkyrix", "description"]).Localize
         });
         //Chrysalis
         Chrysalis_Ship = helper.Content.Ships.RegisterShip("Chrysalis", new ShipConfiguration()
@@ -429,9 +467,9 @@ public sealed class ModEntry : SimpleMod
             {
                 ship = new Ship()
                 {
-                    hull = 13,
-                    hullMax = 13,
-                    shieldMaxBase = 2,
+                    hull = 15,
+                    hullMax = 15,
+                    shieldMaxBase = 4,
                     parts =
                     {
                         new Part
@@ -497,6 +535,69 @@ public sealed class ModEntry : SimpleMod
             UnderChassisSprite = ChrysChassis,
             Name = AnyLocalizations.Bind(["ship", "Chrysalis", "name"]).Localize,
             Description = AnyLocalizations.Bind(["ship", "Chrysalis", "description"]).Localize
+        });
+        //Echo
+        Echo_Ship = helper.Content.Ships.RegisterShip("Echo", new ShipConfiguration()
+        {
+            Ship = new StarterShip()
+            {
+                ship = new Ship()
+                {
+                    hull = 8,
+                    hullMax = 8,
+                    shieldMaxBase = 3,
+                    parts =
+                    {
+                        new Part()
+                        {
+                            type = PType.comms,
+                            damageModifier = PDamMod.weak,
+                            skin = EchoSpecial.UniqueName
+                        },
+                        new Part()
+                        {
+                            type = PType.cannon,
+                            skin = EchoCannon.UniqueName
+                        },
+                        new Part()
+                        {
+                            type = PType.empty,
+                            skin = EchoEmpty.UniqueName
+                        },
+                        new Part()
+                        {
+                            type = PType.cockpit,
+                            skin = EchoCockpit.UniqueName
+                        },
+                        new Part()
+                        {
+                            type = PType.missiles,
+                            skin = EchoMissile.UniqueName
+                        }
+                    }
+                },
+                cards =
+                {
+                    new BasicShieldColorless(),
+                    new DodgeColorless(),
+                    new CannonColorless(),
+                    new CannonColorless(),
+                },
+                artifacts =
+                {
+                    new ShieldPrep(),
+                    new EchoChamber()
+                }
+            },
+            ExclusiveArtifactTypes = new HashSet<Type>()
+            {
+                typeof(EchoChamber),
+                typeof(CallOfTheVoid),
+                typeof(AncientRecal)
+            },
+            UnderChassisSprite = EchoChassis,
+            Name = AnyLocalizations.Bind(["ship", "Echo", "name"]).Localize,
+            Description = AnyLocalizations.Bind(["ship", "Echo", "description"]).Localize
         });
     }
     

@@ -4,6 +4,7 @@ using System.Reflection;
 using System.Collections.Generic;
 
 namespace Fred.AbandonedShipyard;
+
 public class DefenseProtocol : Artifact, IAbandonedArtifact
 {
     public static void Register(IPluginPackage<IModManifest> package, IModHelper helper)
@@ -24,20 +25,20 @@ public class DefenseProtocol : Artifact, IAbandonedArtifact
     }
     public override List<Tooltip>? GetExtraTooltips()
     {
-        return [new TTGlossary("parttrait.armor"), ..StatusMeta.GetTooltips(Status.tempPayback,1)];
+        return [new TTGlossary("parttrait.armor"), .. StatusMeta.GetTooltips(Status.payback, 1)];
     }
     public override void OnReceiveArtifact(State state)
     {
-        foreach(Part part in state.ship.parts)
+        foreach (Part part in state.ship.parts)
         {
-            if(part.type == PType.wing)
+            if (part.type == PType.wing)
             {
                 part.damageModifier = PDamMod.armor;
             }
         }
     }
-    public override void OnTurnStart(State state, Combat combat)
+    public override void OnCombatStart(State state, Combat combat)
     {
-        combat.QueueImmediate(new AStatus{status = Status.tempPayback, statusAmount = 1, targetPlayer = true});
+        combat.QueueImmediate(new AStatus { status = Status.payback, statusAmount = 1, targetPlayer = true });
     }
 }

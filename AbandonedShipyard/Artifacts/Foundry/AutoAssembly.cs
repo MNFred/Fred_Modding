@@ -23,7 +23,7 @@ public class AutoAssembly : Artifact, IAbandonedArtifact
     }
     public override void OnCombatEnd(State state)
     {
-        state.rewardsQueue.Queue(new ACardSelect{allowCancel = true, browseAction = new AssembleHull(), filterUnremovableAtShops = true});
+        state.rewardsQueue.Queue(new ACardSelect{allowCancel = true, browseAction = new AssembleHull(), filterUnremovableAtShops = true, filterTemporary = false});
     }
 }
 public class AssembleHull : CardAction
@@ -41,6 +41,6 @@ public class AssembleHull : CardAction
     }
     public override string? GetCardSelectText(State s)
 	{
-		return "Choose a card to destroy, gain <c=hull>2 max hull</c> (<c=hull>1</c> if it's trash). Then <c=heal>heal</c> for triple its cost.";
+		return "Choose a card to destroy, gain <c=hull>2 max hull</c>. Then <c=heal>heal</c> for triple its cost.";
 	}
 }

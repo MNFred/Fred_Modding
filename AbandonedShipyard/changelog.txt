@@ -1,0 +1,13 @@
+-- 1.1.0 --
+> Added new ship - Echo
+> Added more modules to Chrysalis for enemies from the Enemy Pack Mod (still not all enemies have modules)
+> Chrysalis is now sturdier (hull 13 -> 15, max shield 2 -> 4)
+> Vanguard now starts with one less basic block and has his basic dodge back
+> A few minor changes in writing
+> Added new ship - Echo
+-- 1.1.1 -- 
+> The Foundry can no longer scrap temporary cards for hull
+> Vanguard common artifact changed to apply normal payback at the start of combat, instead of temporary payback every turn
+> Vanguard Starter artifact slightly resprited
+> Vanguard name changed to Valkyrix
+> Slight sprite change to the Foundry Heart
