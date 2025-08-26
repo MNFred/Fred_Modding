@@ -1,0 +1,8 @@
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Debug\net8.0\RadiantHarbour.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Debug\net8.0\RadiantHarbour.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Debug\net8.0\RadiantHarbour.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Debug\net8.0\RadiantHarbour.AssemblyInfo.cs
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Debug\net8.0\RadiantHarbour.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\RadiantHarbour\bin\Debug\net8.0\RadiantHarbour.deps.json
+C:\Users\Admin\Desktop\RadiantHarbour\bin\Debug\net8.0\RadiantHarbour.dll
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Debug\net8.0\RadiantHarbour.dll

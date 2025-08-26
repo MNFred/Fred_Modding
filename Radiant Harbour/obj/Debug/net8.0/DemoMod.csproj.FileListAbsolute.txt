@@ -1,0 +1,29 @@
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\Jack_Copper\obj\Debug\net8.0\DemoMod.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\Jack_Copper\obj\Debug\net8.0\DemoMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\Jack_Copper\obj\Debug\net8.0\DemoMod.AssemblyInfoInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\Jack_Copper\obj\Debug\net8.0\DemoMod.AssemblyInfo.cs
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\Jack_Copper\obj\Debug\net8.0\DemoMod.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\obj\Debug\net8.0\DemoMod.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\obj\Debug\net8.0\DemoMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\obj\Debug\net8.0\DemoMod.AssemblyInfoInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\obj\Debug\net8.0\DemoMod.AssemblyInfo.cs
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\obj\Debug\net8.0\DemoMod.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\bin\Debug\net8.0\DemoMod.deps.json
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\bin\Debug\net8.0\DemoMod.dll
+C:\Program Files (x86)\Steam\steamapps\common\Cobalt Core\Nickel\ModLibrary\JackCopper\obj\Debug\net8.0\DemoMod.dll
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\DemoMod.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\DemoMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\DemoMod.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\DemoMod.AssemblyInfo.cs
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\DemoMod.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\DemoMod.dll
+C:\Users\Admin\Desktop\JackCopper\bin\Debug\net8.0\DemoMod.deps.json
+C:\Users\Admin\Desktop\JackCopper\bin\Debug\net8.0\DemoMod.dll
+C:\Users\Admin\Desktop\JaCk\bin\Debug\net8.0\DemoMod.deps.json
+C:\Users\Admin\Desktop\JaCk\bin\Debug\net8.0\DemoMod.dll
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\DemoMod.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\DemoMod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\DemoMod.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\DemoMod.AssemblyInfo.cs
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\DemoMod.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\DemoMod.dll

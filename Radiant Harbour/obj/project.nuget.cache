@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "3f661V2kh6iMLgeNPUGS3VhmuegDzA9AnS2tG7JfLSSjZ4tlp1weEzt7etiCssYROsB43qvZOB9NeoPybNMJuw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Radiant Harbour\\Radiant_Shipyard.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\nickel.modbuildconfig\\1.2.1\\nickel.modbuildconfig.1.2.1.nupkg.sha512"
+  ],
+  "logs": []
+}

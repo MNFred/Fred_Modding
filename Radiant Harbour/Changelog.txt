@@ -1,0 +1,7 @@
+-- 1.2.0 --
+- Hades -
+> Starting artifact effect changed, now a caard is given that converts current shield to Charge
+> Hades no longer sets the damage of attacks after the first one to 0
+> Hades no longer causes issues when undo is used from the Combat QOL mod
+- Uranus -
+> Hovering over Illegal Ordnance card now hilights the wing out of which the nuke will launch out of, the description also changes when there's only one wing left

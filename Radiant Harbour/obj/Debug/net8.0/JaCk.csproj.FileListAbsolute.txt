@@ -1,0 +1,16 @@
+C:\Users\Admin\Desktop\JackCopper\bin\Debug\net8.0\JaCk.deps.json
+C:\Users\Admin\Desktop\JackCopper\bin\Debug\net8.0\JaCk.dll
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\JaCk.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\JaCk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\JaCk.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\JaCk.AssemblyInfo.cs
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\JaCk.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\JackCopper\obj\Debug\net8.0\JaCk.dll
+C:\Users\Admin\Desktop\JaCk\bin\Debug\net8.0\JaCk.deps.json
+C:\Users\Admin\Desktop\JaCk\bin\Debug\net8.0\JaCk.dll
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\JaCk.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\JaCk.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\JaCk.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\JaCk.AssemblyInfo.cs
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\JaCk.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\JaCk\obj\Debug\net8.0\JaCk.dll

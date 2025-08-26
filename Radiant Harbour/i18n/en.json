@@ -1,0 +1,120 @@
+{
+  "ship": {
+    "Uranus": {
+      "name": "Uranus",
+      "description": "A delicate warship sporting highly illegal ordnance, which can only be refilled at repair bays."
+    },
+    "Cerberus": {
+      "name": "Cerberus",
+      "description": "A cumbersome, monstrous warship with three cycling cannons."
+    },
+    "Venus": {
+      "name": "Venus",
+      "description": "A ship whose double missile bays and cannons swap after each card played."
+    },
+    "Mercury": {
+      "name": "Mercury",
+      "description": "A finicky ship whose dual cannons and missile bays shut down every turn."
+    },
+    "Hades": {
+      "name": "Hades",
+      "description": "A fragile warship with a giant railgun powered by shields."
+    },
+    "Changeling": {
+      "name": "Changeling",
+      "description": "A large ship whose parts shuffle every turn"
+    }
+  },
+  "card": {
+    "IllegalOrdnance": {
+      "name": "Illegal Ordnance"
+    },
+    "MercuryDriver": {
+      "name": "Mercury Driver"
+    },
+    "ShipPartShuffle": {
+      "name": "Ship Parts Shuffle",
+      "description": {"None": "<c=keyword>Shuffle</c> all your ship parts."}
+    },
+    "ChargeCannon": {
+      "name": "Charge Cannon"
+    }
+  },
+  "status": {
+    "E_Charge": {
+      "name": "Power Charge",
+      "description": "Add <c=keyword>{0}</c> damage to your next attack card."
+    }
+  },
+  "artifact": {
+    "UranusCore": {
+      "name": "URANUS CORE",
+      "description": "Permanently lose 2 <c=status>Max Shield</c> for each wing you are missing. Regain it whenever a wing is restocked. You can only restock missing wings at repair bays. At the start of your turn, if you have at least one wing, and you don't have an <c=card>Illegal Ordnance</c> in hand, gain one. \n<c=8F8F8F>Are these even legal?</c>"
+    },
+    "UranusCore2": {
+      "name": "URANUS RESUPPLY",
+      "description": "On pickup, gain <c=keyword>+1</c> <c=hull>max hull</c> and <c=healing>heal 1</c> for each wing you have, then restore missing wings. Your nukes deal 1 more damage and gain <c=status>BUBBLE SHIELD</c>. \n<c=8F8F8F>'Geneva Convention'? What's that?</c>"
+    },
+    "CerberusHead": {
+      "name": "CERBERUS'S HEADS",
+      "description": "After you play a card, <c=keyword>toggle</c> your active cannon to the right. Every time you play an attack card without missing, gain 1 combo. <c=action>At 4 combo, activate a <c=keyword>second</c> cannon. At 6, activate a <c=keyword>third</c>.</c> <c=downside>Lose all combo at the end of combat, after you miss an attack, or after you fire with all three cannons active.</c>"
+    },
+    "CerberusArmor": {
+      "name": "CERBERUS ARMOR",
+      "description": "Your inactive cannons are armored."
+    },
+    "VenusCore": {
+      "name": "VENUS CORE",
+      "description": "After every card you play, <c=keyword>toggle</c> your missile bays into cannons and vice versa."
+    },
+    "VenusCore2": {
+      "name": "WING ARMOR",
+      "description": "On pickup, your wings gain <c=parttrait>armor</c>."
+    },
+    "MercuryCore": {
+      "name": "MERCURY CORE",
+      "description": "<c=downside>At the start of your turn, your cannons and missile bays deactivate.</c> After you play a card, <c=keyword>activate</c> a random cannon or missile bay. At the start of combat, gain 1 <c=card>Mercury Driver</c>."
+    },
+    "MercuryCore2": {
+      "name": "MERCURY CORE V2",
+      "description": "Replaces <c=artifact>Mercury Core</c>. <c=downside>At the start of your turn, your cannons and missile bays deactivate, except for one, chosen randomly.</c> After you play a card, <c=keyword>activate</c> a random cannon or missile bay. At the start of combat, gain 1 <c=card>Mercury Driver</c>."
+    },
+    "HadesCannon": {
+      "name": "HADES CANNON",
+      "description": "At the start of your turn, if you don't have a <c=card>Charge Cannon</c> in your hand, gain one."
+    },
+    "TartarusRage": {
+      "name": "WRATH OF TARTARUS",
+      "description": "Permanently gain <c=keyword>+3</c> <c=hull>max hull</c> and <c=healing>heal 3</c> on pickup. After you lose hull, gain <c=status>Power Charge</c> equal to lost hull."
+    },
+    "ChangelingCore": {
+      "name": "CHANGELING CORE",
+      "description": "At the start of your turn, <c=keyword>shuffle</c> all your ship parts. At the start of combat, gain 1 <c=card>Ship Parts Shuffle</c>."
+    },
+    "Renovations": {
+      "name": "RENOVATIONS",
+      "description": "On pickup, add a comms to your ship and replace your wings with a second missile bay and cannon. \n<c=8F8F8F>Also added a couch to the cockpit area :]</c>"
+    }
+  },
+  "midrow": {
+    "nuke": {
+      "name": "Nuke",
+      "description": "This missile is going to deal <c=damage>9</c> damage and inflict <c=action>total stun</c> after <c=midrow>lingering</c> in the midrow for one turn. Destroying it will damage its destroyer for <c=damage>3</c>, inflict <c=action>total stun</c> to the enemy ship, and destroy all <c=midrow>midrow objects</c>."
+    }
+  },
+  "action": {
+    "dualVBays": {
+      "name": "Dual Bays",
+      "description": "Your cannon becomes a missile bay. <c=downside>Lose this at the start of your turn.</c>"
+    },
+    "dualVCannons": {
+      "name": "Dual Cannons",
+      "description": "Your missile bay becomes a cannon. <c=downside>Lose this at the start of your turn.</c>"
+    }
+  },
+  "choice": {
+    "Shop": {
+      "RefillNukes": "Restock nukes"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+C:\Users\Admin\Desktop\RadiantHarbour\bin\Release\net8.0\Radiant_Shipyard.deps.json
+C:\Users\Admin\Desktop\RadiantHarbour\bin\Release\net8.0\Radiant_Shipyard.dll
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Release\net8.0\Radiant_Shipyard.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Release\net8.0\Radiant_Shipyard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Release\net8.0\Radiant_Shipyard.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Release\net8.0\Radiant_Shipyard.AssemblyInfo.cs
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Release\net8.0\Radiant_Shipyard.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\RadiantHarbour\obj\Release\net8.0\Radiant_Shipyard.dll
+C:\Users\Admin\Desktop\Radiant Harbour\bin\Release\net8.0\Radiant_Shipyard.deps.json
+C:\Users\Admin\Desktop\Radiant Harbour\bin\Release\net8.0\Radiant_Shipyard.dll
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.sourcelink.json
+C:\Users\Admin\Desktop\Radiant Harbour\obj\Release\net8.0\Radiant_Shipyard.dll
