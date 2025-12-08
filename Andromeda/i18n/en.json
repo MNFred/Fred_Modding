@@ -1,0 +1,129 @@
+﻿{
+    "character": {
+        "name": "Andromeda",
+        "description": "<c=0009AB>ANDROMEDA</c> \nStars Given Life. <c=keyword>Shifts the position of ships</c> through gravitational pull of nearby stars whenever cards are played."
+    },
+    "status": {
+        "PassiveGravitate": {
+            "name": "Gentle Gravity",
+            "desc": "After a card is played, move this ship by 1 space to the right, then decrease this by 1."
+        },
+        "ForcefullGravitate": {
+            "name": "Forceful Gravity",
+            "desc": "After you attack, regardless if you miss or not, move this ship by 1 space to the right, then decrease this by 1."
+        },
+        "HermesDash": {
+            "name": "Hermes Dash",
+            "desc": "Next time a ship with this status <c=action>Moves</c>, it moves again immediately by <c=keyword>{0}</c> spaces in the same direction."
+        }
+    },
+    "card": {
+        "StardustCloud": {
+            "name": "Stardust Cloud"
+        },
+        "PiercingStar": {
+            "name": "Piercing Star"
+        },
+        "ShootingStar": {
+            "name": "Shooting Star"
+        },
+        "LoneMoon": {
+            "name": "Lone Moon"
+        },
+        "WindNudge": {
+            "name": "Wind Nudge"
+        },
+        "LazyShift": {
+            "name": "Lazy Shift"
+        },
+        "Comet": {
+            "name": "Comet"
+        },
+        "IronStar": {
+            "name": "Iron Star"
+        },
+        "Quasar": {
+            "name": "Quasar"
+        },
+        "HermesDash": {
+            "name": "Hermes Dash"
+        },
+        "SaturnRing": {
+            "name": "Saturn's Ring",
+            "desc": {
+                "None": "Launch an <c=midrow>asteroid</c> out of your every ship part.",
+                "A": "Launch an <c=midrow>asteroid</c> out of your every ship part.",
+                "B": "Launch a <c=midrow>bubbled asteroid</c> out of your every ship part."
+            }
+        },
+        "LawOfMotion": {
+            "name": "Law Of Motion"
+        },
+        "HeavyStar": {
+            "name": "Heavy Star"
+        },
+        "GravitationalPull": {
+            "name": "Gravity Pull",
+            "desc": {
+                "None": "Bring all cards with <c=status>GRAVITY</c> from the <c=keyword>draw pile</c> to your <c=keyword>hand</c>.",
+                "A": "Bring all cards with <c=status>GRAVITY</c> from the <c=keyword>draw pile</c> to your <c=keyword>hand</c>.",
+                "B": "Bring all cards with <c=status>GRAVITY</c> from the <c=keyword>discard</c> to your <c=keyword>hand</c>."
+            }
+        },
+        "Asteroid": {
+            "name": "Asteroid"
+        },
+        "ViolentWind": {
+            "name": "Violent Wind"
+        },
+        "Lithobraking": {
+            "name": "Lithobraking",
+            "desc": {
+                "None": "Move the enemy towards you, they take 1 damage for each space moved. {0}",
+                "A": "Move the enemy towards you, they take 1 damage for each space moved. {0}",
+                "B": "Move the enemy towards you, they take 1 damage for each space moved. {0}"
+            }
+        },
+        "Entropy": {
+            "name": "Entropy"
+        },
+        "AuroraBorealis": {
+            "name": "Aurora Borealis"
+        },
+        "Meteor": {
+            "name": "Meteor"
+        },
+        "Lightspeed": {
+            "name": "Lightspeed"
+        },
+        "Polarity": {
+            "name": "Polarity"
+        },
+        "AndromedaEXE": {
+            "name": "Andro.EXE",
+            "description": {
+                "None": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=369BFF>Andromeda</c> cards to your hand.",
+                "A": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=369BFF>Andromeda</c> cards to your hand.",
+                "B": "Add 1 of 3 <c=cardtrait>discount, temp</c> <c=369BFF>Andromeda</c> cards to your hand."
+            }
+        }
+    },
+    "artifact": {
+        "ReversedPolarity": {
+            "name": "REVERSED POLARITY",
+            "description": "At the start of combat: add <c=card>Polarity</c> to your hand."
+        },
+        "PocketTelescope": {
+            "name": "POCKET TELESCOPE",
+            "description": "At the end of the turn: If ships do not overlap eachother, gain 1 <c=status>EVADE</c>."
+        },
+        "Spaghettification": {
+            "name": "SPAGHETTIFICATION",
+            "description": "At the end of the turn: If you didn't attack at all, apply 1 <c=status>FORCEFUL GRAVITY</c> to the enemy."
+        },
+        "ShatteredStar": {
+            "name": "SHATTERED STAR",
+            "description": "At the start of every 2nd turn: The enemy gains 1 <c=status>GENTLE GRAVITY</c>. <c=status>GENTLE GRAVITY</c> moves things 2 spaces instead of 1. <c=downside><c=status>GENTLE GRAVITY</c> can no longer be triggered by <c=0009AB>Andromeda</c> and her cards.</c>"
+        }
+    }
+}
