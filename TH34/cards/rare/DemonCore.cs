@@ -24,7 +24,6 @@ internal sealed class CardDemonCore : Card, ITH34Card
     public override CardData GetData(State state) => new() {
         art = MainArt.Sprite,
         exhaust = true,
-		retain = true,
 		artTint = "ffffff",
 		cost = upgrade == Upgrade.A ? 1 : 2,
 	};

@@ -15,3 +15,11 @@ C:\Users\Admin\Desktop\TH34\obj\Debug\net8.0\TH34.AssemblyInfo.cs
 C:\Users\Admin\Desktop\TH34\obj\Debug\net8.0\TH34.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Desktop\TH34\obj\Debug\net8.0\TH34.sourcelink.json
 C:\Users\Admin\Desktop\TH34\obj\Debug\net8.0\TH34.dll
+C:\Users\Maciej\Desktop\TH34\bin\Debug\net8.0\TH34.deps.json
+C:\Users\Maciej\Desktop\TH34\bin\Debug\net8.0\TH34.dll
+C:\Users\Maciej\Desktop\TH34\obj\Debug\net8.0\TH34.csproj.AssemblyReference.cache
+C:\Users\Maciej\Desktop\TH34\obj\Debug\net8.0\TH34.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maciej\Desktop\TH34\obj\Debug\net8.0\TH34.AssemblyInfoInputs.cache
+C:\Users\Maciej\Desktop\TH34\obj\Debug\net8.0\TH34.AssemblyInfo.cs
+C:\Users\Maciej\Desktop\TH34\obj\Debug\net8.0\TH34.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\TH34\obj\Debug\net8.0\TH34.dll

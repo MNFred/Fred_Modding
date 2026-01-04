@@ -6,11 +6,13 @@ using System.Reflection;
 using System.Runtime.InteropServices.Marshalling;
 using Microsoft.Xna.Framework.Graphics;
 using HarmonyLib;
+using System;
 
 namespace Fred.TH34.Artifacts;
 public class ArtifactIonBattery : Artifact, ITH34Artifact
 {
-    public bool triggeredThisTurn;
+    public bool triggeredThisTurn = false;
+    public int statusOnShip = 0;
     public static void Register(IPluginPackage<IModManifest> package, IModHelper helper)
     {
         helper.Content.Artifacts.RegisterArtifact("IonBattery", new()
@@ -29,7 +31,6 @@ public class ArtifactIonBattery : Artifact, ITH34Artifact
     public override List<Tooltip>? GetExtraTooltips()
     {
         return [
-            ..StatusMeta.GetTooltips(ModEntry.Instance.PlusChargeStatus.Status,1),
             ..StatusMeta.GetTooltips(ModEntry.Instance.MinusChargeStatus.Status,1),
         ];
     }
@@ -37,24 +38,37 @@ public class ArtifactIonBattery : Artifact, ITH34Artifact
     {
         triggeredThisTurn = false;
     }
+    public override void OnPlayerPlayCard(int energyCost, Deck deck, Card card, State state, Combat combat, int handPosition, int handCount)
+    {
+        statusOnShip = state.ship.Get(ModEntry.Instance.MinusChargeStatus.Status);
+    }
     public override void AfterPlayerStatusAction(State state, Combat combat, Status status, AStatusMode mode, int statusAmount)
     {
-        if(status == ModEntry.Instance.PlusChargeStatus.Status && statusAmount != 0)
+        if(status == ModEntry.Instance.MinusChargeStatus.Status)
         {
-            if(triggeredThisTurn == false)
+            if(mode is AStatusMode.Set)
             {
-                Pulse();
-                combat.QueueImmediate(new AEnergy{changeAmount = 1});
-                triggeredThisTurn = true;
+                if(statusAmount != statusOnShip)
+                {
+                if(triggeredThisTurn == false)
+                {
+                    Pulse();
+                    combat.QueueImmediate(new AEnergy{changeAmount = 1, timer = 0.1});
+                    triggeredThisTurn = true;
+                    }
+                }
             }
-        }
-        if(status == ModEntry.Instance.MinusChargeStatus.Status && statusAmount != 0)
-        {
-            if(triggeredThisTurn == false)
+            if(mode is AStatusMode.Add)
             {
-                Pulse();
-                combat.QueueImmediate(new AEnergy{changeAmount = 1});
-                triggeredThisTurn = true;
+                if(statusAmount != 0)
+                {
+                    if(triggeredThisTurn == false)
+                    {
+                        Pulse();
+                        combat.QueueImmediate(new AEnergy{changeAmount = 1, timer = 0.1});
+                        triggeredThisTurn = true;
+                    }
+                }
             }
         }
     }

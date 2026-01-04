@@ -24,21 +24,20 @@ internal sealed class CardBackgroundTask : Card, ITH34Card
     public override CardData GetData(State state) => new() {
         art = MainArt.Sprite,
 		artTint = "ffffff",
-		cost = 1
+		cost = upgrade == Upgrade.A ? 0 : 1
 	};
     public override List<CardAction> GetActions(State s, Combat c) => upgrade switch
 	{
 		Upgrade.A => [
-            new AStatus{status = Status.shield, statusAmount = 1, targetPlayer = true},
             new AVariableHint{status = ModEntry.Instance.MinusChargeStatus.Status},
             new AStatus{status = Status.evade, statusAmount = s.ship.Get(ModEntry.Instance.MinusChargeStatus.Status), xHint = 1, targetPlayer = true},
             new AStatus{status = Status.shield, statusAmount = s.ship.Get(ModEntry.Instance.MinusChargeStatus.Status), xHint = 1, targetPlayer = true}
 		],
 		Upgrade.B => [
+            new AStatus{status = Status.shield, statusAmount = 1, targetPlayer = true},
             new AVariableHint{status = ModEntry.Instance.MinusChargeStatus.Status},
             new AStatus{status = Status.evade, statusAmount = s.ship.Get(ModEntry.Instance.MinusChargeStatus.Status), xHint = 1, targetPlayer = true},
-            new AStatus{status = Status.shield, statusAmount = s.ship.Get(ModEntry.Instance.MinusChargeStatus.Status), xHint = 1, targetPlayer = true},
-			new AStatus{status = Status.tempShield, statusAmount = s.ship.Get(ModEntry.Instance.MinusChargeStatus.Status), xHint = 1, targetPlayer = true}
+            new AStatus{status = Status.shield, statusAmount = s.ship.Get(ModEntry.Instance.MinusChargeStatus.Status), xHint = 1, targetPlayer = true}
 		],
 		_ => [
             new AVariableHint{status = ModEntry.Instance.MinusChargeStatus.Status},

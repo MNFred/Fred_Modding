@@ -93,7 +93,7 @@
     },
     "IonBattery": {
       "name": "ION BATTERY",
-      "description": "Gain 1 extra <c=energy>ENERGY</c> the first time you gain <c=status>PLUS CHARGE</c> or <c=status>MINUS CHARGE</c> every turn."
+      "description": "Gain 1 extra <c=energy>ENERGY</c> the first time you gain or lose <c=status>MINUS CHARGE</c> every turn."
     },
     "Calculator": {
       "name": "CALCULATOR",

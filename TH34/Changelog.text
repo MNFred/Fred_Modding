@@ -30,3 +30,7 @@
 -- 1.2.3 --
 > Removed error with modded duo artifacts causing issues if the owner wasn't installed
 > Added some more errors to compensate for the one I fixed
+-- 1.3.0 --
+> ION Battery Artifact effect changed - now it only works when you gain or lose Minus Charge specifically
+> Background Task Card A and B upgrades changed lightly
+> Demon Core Card nerfed - removed retain from it entirely
