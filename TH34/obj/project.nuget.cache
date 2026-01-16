@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "MOhKydQhtyw=",
+  "dgSpecHash": "cNgCn2fJgoM=",
   "success": true,
   "projectFilePath": "C:\\Users\\Maciej\\Desktop\\TH34\\TH34.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Maciej\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
     "C:\\Users\\Maciej\\.nuget\\packages\\nickel.modbuildconfig\\1.2.1\\nickel.modbuildconfig.1.2.1.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
-    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.23\\microsoft.netcore.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.23\\microsoft.windowsdesktop.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.23\\microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
   ],
   "logs": []
 }

@@ -133,7 +133,7 @@
     },
     "LockUp": {
       "name": "LOCK-UP",
-      "description": "<c=downside>While you have <c=status>MINUS CHARGE</c>, you cannot move</c>, but attacks deals <c=damage>+1 damage</c>."
+      "description": "<c=downside>While you have <c=status>MINUS CHARGE</c>, you cannot move</c>, but attacks deal <c=damage>+1 damage</c>."
     },
     "Binary": {
       "name": "BINARY",

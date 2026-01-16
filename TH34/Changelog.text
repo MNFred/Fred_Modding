@@ -34,3 +34,5 @@
 > ION Battery Artifact effect changed - now it only works when you gain or lose Minus Charge specifically
 > Background Task Card A and B upgrades changed lightly
 > Demon Core Card nerfed - removed retain from it entirely
+-- 1.3.1 --
+> Fixed Engine Lock not working at all if TH-34, Tucker, and duo artifacts were all installed
