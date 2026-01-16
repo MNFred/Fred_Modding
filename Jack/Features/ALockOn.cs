@@ -23,5 +23,18 @@ namespace Fred.Jack.features
         } else return 0;
       }),0);
     }
+    public bool HandleStatusTurnAutoStep(State state, Combat combat, StatusTurnTriggerTiming timing, Ship ship, Status status, ref int amount, ref StatusTurnAutoStepSetStrategy setStrategy)
+    {
+      if(status != ModEntry.Instance.ALockOnStatus.Status)
+        return false;
+      if(timing != StatusTurnTriggerTiming.TurnEnd)
+        return false;
+      if(state.ship.Get(Status.timeStop) > 0)
+        return false;
+      if(amount>0){
+        amount--;
+      }
+      return false;
+    }
   }
 }

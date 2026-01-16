@@ -1,4 +1,5 @@
-﻿using Fred.Jack.Midrow;
+﻿using Fred.Jack;
+using Fred.Jack.Midrow;
 using Nanoray.PluginManager;
 using Nickel;
 using System.Collections.Generic;
@@ -39,29 +40,42 @@ namespace Fred.Jack.cards
     public override List<CardAction> GetActions(State s, Combat c) => upgrade switch
     {
       Upgrade.A => [
-        new ATriggerObject{upgradeB = false}
+        new ProtectCockpit{upgradeB = false}
       ],
       Upgrade.B => [
-        new ATriggerObject{upgradeB = true}
+        new ProtectCockpit{upgradeB = true}
       ],
       _ => [
-        new ATriggerObject{upgradeB = false}
+        new ProtectCockpit{upgradeB = false}
       ],
     };
   }
-  public class ATriggerObject : CardAction
-  {
-    public bool upgradeB;
-
-    public override void Begin(G g, State s, Combat c)
+}
+public class ProtectCockpit : CardAction
+{
+  public bool upgradeB;
+    public override List<Tooltip> GetTooltips(State s)
     {
-      foreach (StuffBase stuffBase in c.stuff.Values.ToList())
+      List<Tooltip> list = new List<Tooltip>();
+      list.Add(new TTGlossary("action.spawn"));
+      list.Add(new GlossaryTooltip($"{ModEntry.Instance.Package.Manifest.UniqueName}::Midrow::BlankMissile")
+			{
+				Icon = ModEntry.Instance.BlankRocket_Icon.Sprite,
+				TitleColor = Colors.midrow,
+				Title = ModEntry.Instance.Localizations.Localize(["midrow", "BlankMissile", "name"]),
+				Description = ModEntry.Instance.Localizations.Localize(["midrow", "BlankMissile", "description"])
+			});
+      foreach(Part part in s.ship.parts)
+    {
+      if(part.type == PType.cockpit)
       {
-        if (!upgradeB && c.otherShip.GetPartAtWorldX(stuffBase.x) != null)
-          c.QueueImmediate(stuffBase.GetActions(s, c));
-        if (upgradeB && s.ship.GetPartAtWorldX(stuffBase.x) != null)
-          c.QueueImmediate(stuffBase.GetActions(s, c));
+        part.hilight = true;
       }
     }
-  }
+      return list;
+    }
+    public override void Begin(G g, State s, Combat c)
+    {
+      c.QueueImmediate(from cockpits in s.ship.parts.Select((Part part, int x) => new {part, x}) where cockpits.part.type == PType.cockpit select new ASpawn{fromX = cockpits.x, thing = new BlankMissile{targetPlayer = false, bubbleShield = upgradeB}});
+    }
 }

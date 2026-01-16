@@ -19,6 +19,7 @@ public sealed class ModEntry : SimpleMod
     internal Harmony Harmony { get; }
     internal static ModEntry Instance { get; set; } = null!;
     internal IKokoroApi KokoroApi { get; }
+    internal IKokoroApi.IV2 kokoroV2 { get; }
     internal Settings Settings { get; set; } = new Settings();
     internal IEssentialsApi? EssentialsApi { get; set; }
     internal ILocalizationProvider<IReadOnlyList<string>> AnyLocalizations { get; }
@@ -73,9 +74,6 @@ public sealed class ModEntry : SimpleMod
     internal ISpriteEntry TargeterIcon { get; }
     internal ISoundEntry JackBabble { get; }
     internal IStatusEntry MidrowHaltStatus { get; }
-    internal static IReadOnlyList<Type> EventTypes { get; } = [
-      typeof(JackHullEvent)
-    ];
     internal static IReadOnlyList<Type> Jack_Common_Cards { get; } = [
         typeof(CardAPMissile),
         typeof(DodgeRoll),
@@ -106,7 +104,8 @@ public sealed class ModEntry : SimpleMod
     internal static IReadOnlyList<Type> Jack_Special_Cards { get; } = [
         typeof(BackUpMissileCard),
         typeof(PrecisionCard),
-        typeof(JackEXE)
+        typeof(JackEXE),
+        typeof(PanicButtonCard)
     ];
     internal static IEnumerable<Type> Jack_AllCard_Types
         => Jack_Common_Cards
@@ -117,7 +116,8 @@ public sealed class ModEntry : SimpleMod
         typeof(SpareAmmo),
         typeof(TripleTag),
         typeof(PreloadedBays),
-        typeof(CoordinatedLaunch)
+        typeof(CoordinatedLaunch),
+        typeof(PanicButton)
     ];
     internal static IReadOnlyList<Type> Jack_Boss_Artifacts { get; } = [
         typeof(NeverMissile)
@@ -140,7 +140,6 @@ public sealed class ModEntry : SimpleMod
     ];
     internal static IEnumerable<Type> RegisterableTypes { get; }
 		= [
-			.. EventTypes,
             typeof(CardDOME)
 		];
     internal static readonly IEnumerable<Type> LateRegisterableTypes
@@ -151,6 +150,7 @@ public sealed class ModEntry : SimpleMod
         Harmony = new(package.Manifest.UniqueName);
         Api = new();
         KokoroApi = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!;
+        kokoroV2 = helper.ModRegistry.GetApi<IKokoroApi>("Shockah.Kokoro")!.V2;
         
         Harmony.PatchAll();
         helper.Events.OnModLoadPhaseFinished += (_, phase) =>
@@ -161,31 +161,6 @@ public sealed class ModEntry : SimpleMod
             DynaApi = helper.ModRegistry.GetApi<IDynaApi>("Shockah.Dyna");
             TyApi = helper.ModRegistry.GetApi<ITyAndSashaApi>("TheJazMaster.TyAndSasha");
             DuoArtifactsApi = helper.ModRegistry.GetApi<IDuoArtifactsApi>("Shockah.DuoArtifacts");
-            helper.ModRegistry.AwaitApi<IModSettingsApi>(
-			"Nickel.ModSettings",
-			api => api.RegisterModSettings(api.MakeList([
-				api.MakeProfileSelector(
-					() => package.Manifest.DisplayName ?? package.Manifest.UniqueName,
-					Settings.ProfileBased
-				),
-				api.MakeCheckbox(
-					() => "Jack Event",
-					() => Settings.ProfileBased.Current.JackEventEnabled,
-					(_, _, value) => Settings.ProfileBased.Current.JackEventEnabled = value
-				).SetTooltips(() => [
-					new GlossaryTooltip($"settings.{package.Manifest.UniqueName}::{nameof(ProfileSettings.JackEventEnabled)}")
-					{
-						TitleColor = Colors.textBold,
-						Title = "Jack Event",
-						Description = "Uncheck to disable event involving Jack from appearing in zone 2 and 3."
-					}
-				]),
-			]).SubscribeToOnMenuClose(_ =>
-			{
-				helper.Storage.SaveJson(helper.Storage.GetMainStorageFile("json"), Settings);
-				UpdateSettings();
-			}))
-		);
         foreach (var registerableType in LateRegisterableTypes)
 				AccessTools.DeclaredMethod(registerableType, nameof(IRegisterable.Register))?.Invoke(null, [package, helper]);
         foreach (var type in RegisterableTypes)
@@ -469,26 +444,6 @@ public sealed class ModEntry : SimpleMod
             },
             ExeCardType = typeof(JackEXE)
         });
-        helper.Content.Characters.V2.RegisterNonPlayableCharacter("JackE", new NonPlayableCharacterConfigurationV2()
-        {
-            Babble = new CharacterBabbleConfiguration()
-            {
-                Sound = JackBabble
-            },
-            CharacterType = "JackE",
-            Name = AnyLocalizations.Bind(["eventGuy", "JackE", "name"]).Localize,
-            NeutralAnimation = new CharacterAnimationConfigurationV2()
-            {
-                CharacterType = "JackE",
-                LoopTag = "neutral",
-                Frames = new[]
-                {
-                    JaCk_Neutral_0.Sprite,
-                    JaCk_Neutral_1.Sprite,
-                    JaCk_Neutral_0.Sprite
-                }
-            },
-        });
         foreach (var CardType in Jack_AllCard_Types)
             AccessTools.DeclaredMethod(CardType, nameof(IJackCard.Register))?.Invoke(null, [package,helper]);
         foreach (var ArtifactType in Jack_AllArtifacts)
@@ -499,7 +454,7 @@ public sealed class ModEntry : SimpleMod
 			{
 				cards = [
                     new BlankMissileCard(),
-                    new TargetPractice()
+                    new CardAPMissile()
 				],
 			}
 		);

@@ -44,31 +44,33 @@ public class AAmmoCheck : CardAction
   public bool cardExists;
     public override void Begin(G g, State s, Combat c)
     {
-      cardExists = true;
+      cardExists = false;
       if(c.isPlayerTurn)
       {
         foreach(Card card in c.hand)
         {
           if(card.GetMeta().deck == ModEntry.Instance.Jack_Deck.Deck)
           {
-            cardExists = false;
+            cardExists = true;
           }
         }
-        if(cardExists)
+        if(!cardExists)
         {
           c.QueueImmediate(new AAddCard{
             card = new BackUpMissileCard{temporaryOverride = true},
             amount = 1,
             destination = CardDestination.Hand,
           });
+          return;
         }
-        if(!cardExists)
+        if(cardExists)
         {
           c.QueueImmediate(new AStatus{
             status = Status.droneShift,
             statusAmount = 1,
             targetPlayer = true
           });
+          return;
         }
       }
     }

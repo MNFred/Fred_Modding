@@ -68,7 +68,6 @@ namespace Fred.Jack.Midrow
         {
           worldX = x,
           outgoingDamage = BASE_DAMAGE,
-          targetPlayer = targetPlayer
         }
       };
     }

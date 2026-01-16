@@ -1,0 +1,161 @@
+﻿{
+    "character": {
+        "name": "Dougie",
+        "description": "<c=D97754>DOUGIE</c> \nYour bioengineer. His cards create <c=midrow>cell colonies</c>, which can be <c=keyword>harvested</c> or <c=keyword>mutated</c> to powerful effects."
+    },
+    "status": {
+        "Cryptobiosis": {
+            "name": "CRYPTOBIOSIS",
+            "description": "<c=midrow>Cell colonies</c> leave behind <c=midrow>asteroids</c> after being <c=action>harvested</c>."
+        },
+        "Apoptosis": {
+            "name": "APOPTOSIS",
+            "description": "<c=midrow>Cell colonies</c> fire for {0} damage immediately after being <c=action>harvested</c>."
+        }
+    },
+    "card": {
+        "CellColonyCard": {
+            "name": "Cell Colony"
+        },
+        "Bioweapon": {
+            "name": "Bioweapon"
+        },
+        "Outbreak": {
+            "name": "Outbreak"
+        },
+        "KeratinSpike": {
+            "name": "Keratin Spike"
+        },
+        "Rebirth": {
+            "name": "Rebirth"
+        },
+        "Pressurize": {
+            "name": "Pressurize"
+        },
+        "Consume": {
+            "name": "Consume"
+        },
+        "Fatten": {
+            "name": "Fatten"
+        },
+        "Biofuel": {
+            "name": "Biofuel"
+        },
+        "Mutate": {
+            "name": "Mutate"
+        },
+        "Evolve": {
+            "name": "Evolve"
+        },
+        "FeedTheHorde": {
+            "name": "Feed The Horde"
+        },
+        "Hypertrophy": {
+            "name": "Hypertrophy"
+        },
+        "Engorge": {
+            "name": "Engorge"
+        },
+        "LethalInjection": {
+            "name": "Lethal Injection"
+        },
+        "Clone": {
+            "name": "Clone"
+        },
+        "RSelection": {
+            "name": "R Selection",
+            "description": {
+                "None": "Destroy all unmutated <c=midrow>cell colonies</c>. Create new ones next to survivors.",
+                "A": "Destroy all unmutated <c=midrow>cell colonies</c>. Create new ones next to survivors.",
+                "B": "Create <c=midrow>cell colonies</c> next to existing ones."
+            }
+        },
+        "Cryptobiosis": {
+            "name": "Cryptobiosis"
+        },
+        "Apoptosis": {
+            "name": "Apoptosis"
+        },
+        "Exoskeleton": {
+            "name": "Exoskeleton"
+        },
+        "ShadowTheHedgehog": {
+            "name": "The Ultimate Lifeform"
+        },
+        "MeatGrinder": {
+            "name": "Meat Grinder"
+        },
+        "DougieEXE": {
+            "name": "Dougie.EXE",
+            "description": {
+                "None": "Launch a <c=midrow>cell</c>. Add 1 of 3 <c=cardtrait>discount, temp</c> <c=CC6641>Dougie</c> cards to your hand.",
+                "A": "Launch a <c=midrow>cell</c>. Add 1 of 3 <c=cardtrait>discount, temp</c> <c=CC6641>Dougie</c> cards to your hand.",
+                "B": "Launch a <c=midrow>cell</c>. Add 1 of 4 <c=cardtrait>discount, temp</c> <c=CC6641>Dougie</c> cards to your hand."
+            }
+        }
+    },
+    "artifact": {
+        "ExtendoGrip": {
+            "name": "EXTENDO-GRIP",
+            "description": "Increases the range of <c=action>cell harvest</c> by 1 space."
+        },
+        "GrowthHormones": {
+            "name": "GROWTH HORMONES",
+            "description": "The first <c=midrow>cell colony</c> launched each combat is <c=action>F. Mutated</c>."
+        },
+        "AggressionGenes": {
+            "name": "AGGRESSION GENES",
+            "description": "Every 3rd <c=midrow>cell colony</c> launched is <c=action>A. Mutated</c>."
+        },
+        "HotDog": {
+            "name": "HOT DOG!",
+            "description": "At the start of combat, gain a <c=card>Meat Grinder</c>."
+        },
+        "Polydactyly": {
+            "name": "POLYDACTYLY",
+            "description": "Draw <c=card>+1 card</c> every turn if there is a <c=midrow>cell colony</c> in front of your <c=part>missile bay</c> or <c=part>cockpit</c>."
+        },
+        "FLOState": {
+            "name": "F.L.O. STATE",
+            "description": "Every 3 turns, gain 1 <c=status>DRONESHIFT</c>."
+        },
+        "Parasitoid": {
+            "name": "PARASITOID",
+            "description": "Gain 1 extra <c=energy>ENERGY</c> every turn. <c=downside>All cards become <c=cardtrait>Symbiotic</c>.</c> 2 <c=midrow>cell colonies</c> will always be near your ship at the start of combat."
+        }
+    },
+    "midrow": {
+        "Cell": {
+            "name": "Cell Colony",
+            "description": "Will block 1 shot before being destroyed."
+        }
+    },
+    "action": {
+        "MutateAllA": {
+            "name": "A. Mutation",
+            "description": "Mutates all <c=midrow>cell colonies</c>. Mutated <c=midrow>cell colonies</c> will shoot a 1 damage shot once per turn."
+        },
+        "MutateAllX": {
+            "name": "X. Mutation",
+            "description": "Mutates all <c=midrow>cell colonies</c>. Mutated <c=midrow>cell colonies</c> will shoot a 2 damage shot once per turn."
+        },
+        "MutateAllD": {
+            "name": "D. Mutation",
+            "description": "Mutates all <c=midrow>cell colonies</c>. Mutated <c=midrow>cell colonies</c> will beam <c=status>1 SHIELD</c> at their target once per turn."
+        },
+        "MutateAllF": {
+            "name": "F. Mutation",
+            "description": "Mutates all <c=midrow>cell colonies</c>. Mutated <c=midrow>cell colonies</c> can be <c=action>harvested</c> 1 more time before being destroyed."
+        },
+        "MutateAllB": {
+            "name": "B. Mutation",
+            "description": "Apply a <c=midrow>bubble shield</c> to <c=keyword>every</c> <c=midrow>cell colony</c>."
+        }
+    },
+    "trait": {
+        "Symbiotic": {
+            "name": "Symbiotic",
+            "description": "This card costs +1 energy if not within harvesting range of a <c=midrow>cell colony</c>."
+        }
+    }
+}

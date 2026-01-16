@@ -26,11 +26,13 @@ namespace Fred.Jack.features
       }),0);
       ModEntry.Instance.Helper.Events.RegisterBeforeArtifactsHook("ModifyBaseDamage", (int baseDamage, Card? card, State state, Combat? combat, bool fromPlayer) =>
       {
+        if(combat == null)
+          return 0;
         if (state.EnumerateAllArtifacts().FirstOrDefault(a => a is SecondaryReticle) is { } artifact)
         {
           if(fromPlayer)
           {
-            return combat!.otherShip.Get(ModEntry.Instance.LockOnStatus.Status)/2;
+            return combat.otherShip.Get(ModEntry.Instance.LockOnStatus.Status)/2;
           }else return 0;
         }else return 0;
       },0);
@@ -44,11 +46,8 @@ namespace Fred.Jack.features
         return false;
       if(state.ship.Get(Status.timeStop) > 0)
         return false;
-      if (state.EnumerateAllArtifacts().FirstOrDefault(a => a is CrystalReticle) is { } artifact)
-      {
+      if(amount>0){
         amount = 0;
-      }else{
-        --amount;
       }
       return false;
     }

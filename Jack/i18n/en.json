@@ -2,7 +2,7 @@
   "character": {
     "Jack": {
       "name": "Jack",
-      "description": "<c=0cd85d>JACK</c>\nYour Military Missiler. Specializes in <c=keyword>launching</c> and <c=keyword>powering up</c> <c=midrow>missiles</c>, as well as <c=keyword>destruction</c> and <c=keyword>manipulation</c> of <c=midrow>midrow objects</c>."
+      "description": "<c=0cd85d>JACK</c>\nYour Military Missile Specialist. <c=keyword>Powers up</c> <c=midrow>missiles</c>, as well as <c=keyword>manipulates</c> <c=midrow>midrow objects</c>."
     }
   },
   "eventGuy": {
@@ -18,7 +18,7 @@
       "name": "Dodgeroll"
     },
     "BackUpMissile": {
-      "name": "BackUp Stock",
+      "name": "Backup Stock",
       "description": {
         "None": "Add a <c=cardtrait>temporary</c> <c=card>Backup Missile</c> to your <c=keyword>hand</c>.",
         "A": "Add a <c=cardtrait>temporary</c> <c=card>Backup Missile A</c> to your <c=keyword>hand</c>.",
@@ -40,9 +40,9 @@
     "JackEXE": {
       "name": "Jack.EXE",
       "description": {
-        "None": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=0cd85d>JACK</c> cards to your hand.",
-        "A": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=0cd85d>JACK</c> cards to your hand.",
-        "B": "Add 1 of 3 <c=cardtrait>discount, temp</c> <c=0cd85d>JACK</c> cards to your hand."
+        "None": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=0cd85d>Jack</c> cards to your hand.",
+        "A": "Add 1 of 2 <c=cardtrait>discount, temp</c> <c=0cd85d>Jack</c> cards to your hand.",
+        "B": "Add 1 of 3 <c=cardtrait>discount, temp</c> <c=0cd85d>Jack</c> cards to your hand."
       }
     },
     "BlankMissile": {
@@ -55,14 +55,14 @@
       "name": "Target Practice"
     },
     "RadarOverclock": {
-      "name": "Radar Overclock"
+      "name": "Reposition"
     },
     "RemoteActivation": {
-      "name": "Remote Activation",
+      "name": "Quick Cover",
       "description": {
-        "None": "All <c=midrow>objects</c> aligned with the enemy take a turn.",
-        "A": "All <c=midrow>objects</c> aligned with the enemy take a turn.",
-        "B": "All <c=midrow>objects</c> aligned with you take a turn."
+        "None": "Launch a <c=midrow>Blank Missile</c> out of your cockpit.",
+        "A": "Launch a <c=midrow>Blank Missile</c> out of your cockpit.",
+        "B": "Launch a <c=midrow>Bubbled Blank Missile</c> out of your cockpit."
       }
     },
     "HeavyShift": {
@@ -77,9 +77,9 @@
     "RapidReload": {
       "name": "Rapid Reload",
       "description": {
-        "None": "Bring all <c=action>spawn</c> cards from <c=keyword>discard pile</c> into your hand.",
-        "A": "Bring all <c=action>spawn</c> cards from <c=keyword>discard pile</c> into your hand.",
-        "B": "Bring all <c=action>spawn</c> cards from <c=keyword>draw pile</c> into your hand."
+        "None": "Bring all <c=action>launch</c> cards from <c=keyword>discard pile</c> into your hand.",
+        "A": "Bring all <c=action>launch</c> cards from <c=keyword>discard pile</c> into your hand.",
+        "B": "Bring all <c=action>launch</c> cards from <c=keyword>draw pile</c> into your hand."
       }
     },
     "OnMyMark": {
@@ -108,13 +108,16 @@
     "ClearPerimiter": {
       "name": "Clear The Perimiter",
       "description": {
-        "None": "Destroy every <c=midrow>object</c> aligned with your ship.",
-        "A": "Destroy every <c=midrow>object</c> aligned with your ship.",
+        "None": "Destroy every <c=midrow>object</c> in front of your ship.",
+        "A": "Destroy every <c=midrow>object</c> in front of your ship.",
         "B": "Gain 1 <c=status>droneshift</c> for every <c=midrow>object</c> aligned with your ship."
       }
     },
     "RadarAmp": {
       "name": "Radar AMP"
+    },
+    "PanicButtonCard": {
+      "name": "Panic Button"
     }
   },
   "artifact": {
@@ -132,7 +135,7 @@
     },
     "CoordinatedLaunch": {
       "name": "COORDINATED LAUNCH",
-      "description": "The first time you spawn an object each turn: gain 1 <c=status>DRONESHIFT</c>."
+      "description": "The third time you <c=action>launch</c> an object each turn: gain 1 <c=status>DRONESHIFT</c>."
     },
     "NeverMissile": {
       "name": "NEVER MISS-ILE",
@@ -148,7 +151,7 @@
     },
     "CrystalReticle": {
       "name": "CRYSTAL RETICLE",
-      "description": "At the end of your turn, convert all your <c=status>SHARD</c> into <c=status>LOCK-ON</c>. <c=downside><c=status>LOCK-ON</c> now disappears completely at the start of each turn."
+      "description": "At the end of your turn, convert all your <c=status>SHARD</c> into <c=status>LOCK-ON</c>. <c=downside>Your maximum shard capacity is reduced by 1.</c>"
     },
     "ScrapArmor": {
       "name": "SCRAP ARMOR",
@@ -160,10 +163,10 @@
     },
     "AimBot": {
       "name": "AIMBOT",
-      "description": "After a card with <c=cardtrait>exhaust</c> is played, apply 1 <c=status>LOCK-ON</c> to the enemy. Apply 1 <c=status>ADVANCED LOCK-ON</c> instead if the card has <c=cardtrait>single-use</c>."
+      "description": "After a card with <c=cardtrait>exhaust</c> or <c=cardtrait>single-use</c> is played, apply 2 <c=status>LOCK-ON</c> to the enemy."
     },
     "SimulatedReinforcement": {
-      "name": "SIMULATED REINFORCEMENT",
+      "name": "S.T.A.T",
       "description": "The second time you play a <c=cardtrait>temporary</c> card each turn, add a <c=cardtrait>single-use</c> <c=card>Precision</c> to your <c=keyword>hand</c>."
     },
     "MissileHeatSinks": {
@@ -177,6 +180,10 @@
     "ObjectScanner": {
       "name": "OBJECT SCANNER",
       "description": "At the end of each turn: Gain 1 <c=status>DRAW NEXT TURN</c> for every object in the midrow (up to 3)."
+    },
+    "PanicButton": {
+      "name": "PANIC BUTTON",
+      "description": "When there's any <c=midrow>missile</c> or <c=midrow>attack drone</c> targetting you, gain a <c=card>Panic Button</c>. <c=downside>Cannot trigger on consecutive turns.</c>"
     }
   },
   "status": {
@@ -186,19 +193,19 @@
     },
     "LockOn": {
       "name": "Lock-On",
-      "description": "Missiles do <c=damage>+{0} damage</c> to this ship. <c=downside>Decreases by 1 at the start of every turn.</c>"
+      "description": "<c=midrow>Missiles</c> do extra <c=damage>{0} damage</c> to this ship. <c=downside>Disappears completely at the start of every turn.</c>"
     },
     "ALockOn": {
       "name": "Advanced Lock-On",
-      "description": "Missiles do <c=damage>+{0} damage</c> to this ship."
+      "description": "<c=midrow>Missiles</c> do extra <c=damage>{0} damage</c> to this ship. <c=downside>Decreases by 1 at the start of every turn.</c>"
     },
     "LoseDroneNext": {
       "name": "Signal Disruption",
-      "description": "<c=downside>At the start of next turn, lose all <c=status>DRONESHIFT</c>.</c>"
+      "description": "<c=downside>At the start of your next turn, lose all <c=status>DRONESHIFT</c>.</c>"
     },
     "MidrowHalt": {
       "name": "Midrow Halt",
-      "description": "While you have this status, <c=midrow>midrow</c> will not take a turn. <c=downside>Decreases by 1 at the start of every turn.</c>"
+      "description": "While you have this status, <c=midrow>midrow</c> will skip it's turn. <c=downside>Decreases by 1 at the start of every turn.</c>"
     }
   },
   "action": {
@@ -222,7 +229,7 @@
     },
     "APMissile": {
       "name": "AP Missile",
-      "description": "This missile is going to deal <c=damage>1</c> <c=action>piercing</c> damage, if the part hit has <c=parttrait>armor</c>, remove it."
+      "description": "This missile is going to deal <c=damage>1</c> <c=action>piercing</c> damage. If it hits a part with an <c=parttrait>armor</c>, remove it."
     },
     "BlankMissile": {
       "name": "Blank Missile",

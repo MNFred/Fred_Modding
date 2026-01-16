@@ -41,7 +41,7 @@ namespace Fred.Jack.cards
       Upgrade.A => [
         new AStatus{
           status = ModEntry.Instance.ALockOnStatus.Status,
-          statusAmount = 1,
+          statusAmount = 2,
           targetPlayer = false
         },
         new AStatus{
@@ -53,7 +53,7 @@ namespace Fred.Jack.cards
       Upgrade.B => [
         new AStatus{
           status = ModEntry.Instance.ALockOnStatus.Status,
-          statusAmount = 2,
+          statusAmount = 3,
           targetPlayer = false
         },
         new AStatus{
@@ -65,7 +65,7 @@ namespace Fred.Jack.cards
       _ => [
         new AStatus{
           status = ModEntry.Instance.ALockOnStatus.Status,
-          statusAmount = 1,
+          statusAmount = 2,
           targetPlayer = false
         },
         new AStatus{

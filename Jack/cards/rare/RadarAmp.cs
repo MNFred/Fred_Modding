@@ -30,7 +30,7 @@ namespace Fred.Jack.cards
       return new CardData()
       {
         cost = 1,
-        exhaust = true,
+        exhaust = upgrade == Upgrade.B ? true : false,
         retain = upgrade == Upgrade.A ? true : false
       };
     }
@@ -58,13 +58,8 @@ namespace Fred.Jack.cards
           status = Status.droneShift
         },
         new AStatus{
-          status = Status.droneShift,
-          statusAmount = -2,
-          targetPlayer = true
-        },
-        new AStatus{
           status = ModEntry.Instance.ALockOnStatus.Status,
-          statusAmount = Math.Max(0, s.ship.Get(Status.droneShift)-2),
+          statusAmount = Math.Max(0, s.ship.Get(Status.droneShift)),
           xHint = 1,
           targetPlayer = false
         },

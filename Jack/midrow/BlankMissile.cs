@@ -1,7 +1,10 @@
-﻿using Nickel;
+﻿using Fred.Jack.Midrow;
+using HarmonyLib;
+using Nickel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 namespace Fred.Jack.Midrow
@@ -13,6 +16,10 @@ namespace Fred.Jack.Midrow
     static BlankMissile()
     {
       DB.drones[MIDROW_OBJECT_NAME] = ModEntry.Instance.BlankRocket_Sprite.Sprite;
+      ModEntry.Instance.Harmony.Patch(
+			  original: AccessTools.DeclaredMethod(typeof(Combat), nameof(Combat.DestroyDroneAt)),
+			  prefix: new HarmonyMethod(MethodBase.GetCurrentMethod()!.DeclaringType!, nameof(Combat_DestroyDroneAt_Prefix))
+		  );
     }
 
     public override double GetWiggleAmount() => 0.1;
@@ -36,11 +43,19 @@ namespace Fred.Jack.Midrow
 				Description = ModEntry.Instance.Localizations.Localize(["midrow", "BlankMissile", "description"])
 			}];
     }
-    public override List<CardAction>? GetActionsOnDestroyed(State s, Combat c, bool wasPlayer, int worldX)
+    private static void Combat_DestroyDroneAt_Prefix(State s, int x, bool playerDidIt)
     {
-      c.QueueImmediate(new APlaceBlank{X = this.x, XL = this.xLerped, timer = 0});
-      c.Queue(new ATriggerBlank{timer = 0.1});
-      return null;
+      Route route = s.route;
+      Combat? combat = route as Combat;
+      if (combat != null)
+      {
+        StuffBase? stuff = combat.stuff.GetValueOrDefault(x);
+        if(stuff != null && stuff is BlankMissile)
+        {
+          combat.QueueImmediate(new ATriggerBlank{timer = 0.0});
+          combat.QueueImmediate(new APlaceBlank{timer = 0.0, X = stuff.x, targettingUs = stuff.targetPlayer, XL = stuff.xLerped});
+        }
+      }
     }
   }
   public class BlankRocketA : Missile
@@ -104,12 +119,12 @@ namespace Fred.Jack.Midrow
         new AMissileHit{
           worldX = x,
           outgoingDamage = BASE_DAMAGE,
-          targetPlayer = targetPlayer
         }
       };
     }
   }
-  public class ATriggerBlank : CardAction
+}
+public class ATriggerBlank : CardAction
   {
     public override void Begin(G g, State s, Combat c)
     {
@@ -120,13 +135,17 @@ namespace Fred.Jack.Midrow
       }
     }
   }
-  public class APlaceBlank : CardAction
+public class APlaceBlank : CardAction
+{
+  public int X;
+  public double XL;
+  public bool targettingUs;
+  public override void Begin(G g, State s, Combat c)
   {
-    public int X;
-    public double XL;
-    public override void Begin(G g, State s, Combat c)
+    StuffBase? somethingHere = c.stuff.GetValueOrDefault(X);
+    BlankRocketA blankactive = new BlankRocketA{x = X, xLerped = XL, targetPlayer = targettingUs};
+    if(somethingHere == null)
     {
-      BlankRocketA blankactive = new BlankRocketA{x = X, xLerped = XL};
       c.stuff[X] = blankactive;
     }
   }

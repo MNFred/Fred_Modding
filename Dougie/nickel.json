@@ -1,0 +1,20 @@
+{
+  "UniqueName": "Dougie",
+  "Version": "1.0.0",
+  "Author": "Soggoru and Fred",
+  "Description": "That's a pretty sick rat, no, like really, really sick, just look at him, he's got an extra eye and a few extra arms that you can't see unless you look at the assets folder.",
+  "RequiredApiVersion": "1.5.7",
+  "EntryPointAssembly": "Dougie.dll",
+  "LoadPhase": "AfterDbInit",
+  "Dependencies": [
+    {
+      "UniqueName": "Shockah.Kokoro",
+      "Version": "1.12.1"
+    }
+  ],
+  "UpdateChecks": {
+        "NexusMods": {
+            "ID": 79
+        }
+    }
+}

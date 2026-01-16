@@ -1,4 +1,4 @@
-﻿namespace Fred.Jack;
+﻿﻿namespace Fred.Jack;
 public partial interface IKokoroApi
 {
     void RegisterStatusLogicHook(IStatusLogicHook hook, double priority);

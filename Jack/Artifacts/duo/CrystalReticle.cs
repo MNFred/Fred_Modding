@@ -38,4 +38,8 @@ public class CrystalReticle : Artifact, IRegisterable
         combat.QueueImmediate(new AStatus{status = Status.shard, statusAmount = 0, targetPlayer = true, mode = AStatusMode.Set});
       }
     }
+    public override void OnReceiveArtifact(State state)
+    {
+        state.ship.shardMaxBase--;
+    }
 }

@@ -11,9 +11,9 @@ public interface IJackApi
     IStatusEntry ALockOnStatus { get; }
     IStatusEntry MidrowHaltStatus { get; }
     IStatusEntry LoseDroneshiftNextStatus { get; }
-    MiniMissile MiniMissile { get; }
-    APRocket APRocket { get; }
-    BalisticDormant balisticMissile { get; }
-    ClusterMissile clusterMissile { get; }
-    BlankMissile blankMissile { get; }
+    StuffBase MiniMissile { get; }
+    StuffBase APRocket { get; }
+    StuffBase BalisticMissile { get; }
+    StuffBase ClusterMissile { get; }
+    StuffBase BlankMissile { get; }
 }

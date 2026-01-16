@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "i5bo2e2sjm4HrKEq1GlmujFrdMqpq4TXTKyp3PdBDo7SIpc23dJ1i9ylW4Jy2f+EdYWv5HLkEe1BB5L2ze8/6g==",
+  "dgSpecHash": "igk4rP1VYko=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\Jack\\Jack.csproj",
+  "projectFilePath": "C:\\Users\\Maciej\\Desktop\\Jack\\Jack.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\nickel.modbuildconfig\\1.2.1\\nickel.modbuildconfig.1.2.1.nupkg.sha512"
+    "C:\\Users\\Maciej\\.nuget\\packages\\fayti1703.assemblytasks\\1.1.0\\fayti1703.assemblytasks.1.1.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\nanoray.extractsinglefileapplicationresourcetask\\1.0.0\\nanoray.extractsinglefileapplicationresourcetask.1.0.0.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\nickel.modbuildconfig\\1.2.1\\nickel.modbuildconfig.1.2.1.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.23\\microsoft.netcore.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.23\\microsoft.windowsdesktop.app.ref.8.0.23.nupkg.sha512",
+    "C:\\Users\\Maciej\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.23\\microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
   ],
   "logs": []
 }

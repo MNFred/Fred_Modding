@@ -6,8 +6,6 @@ public static class StoryVarsAdditions
 {
 	internal static ModEntry Instance => ModEntry.Instance;
 
-	private static IKokoroApi KokoroApi => Instance.KokoroApi;
-
 	internal static void DrawLoadingScreen_Prefix(MG __instance, ref int __state)
 		=> __state = __instance.loadingQueue?.Count ?? 0;
 

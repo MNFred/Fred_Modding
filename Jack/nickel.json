@@ -1,6 +1,6 @@
 {
   "UniqueName": "Jack",
-  "Version": "2.4.0",
+  "Version": "2.6.1",
   "RequiredApiVersion": "0.12.0",
   "EntryPointAssembly": "Jack.dll",
   "LoadPhase": "AfterDbInit",
@@ -8,11 +8,6 @@
         {
             "UniqueName": "Shockah.Kokoro",
             "Version": "1.12.1"
-        },
-        {
-          "UniqueName": "TheJazMaster.MoreDifficulties",
-          "Version": "1.6.3",
-          "IsRequired": false
         }
       ],
       "UpdateChecks": {

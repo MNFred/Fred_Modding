@@ -1,0 +1,8 @@
+C:\Users\Maciej\Desktop\Jack\bin\Release\net8.0\Jack.deps.json
+C:\Users\Maciej\Desktop\Jack\bin\Release\net8.0\Jack.dll
+C:\Users\Maciej\Desktop\Jack\obj\Release\net8.0\Jack.csproj.AssemblyReference.cache
+C:\Users\Maciej\Desktop\Jack\obj\Release\net8.0\Jack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Maciej\Desktop\Jack\obj\Release\net8.0\Jack.AssemblyInfoInputs.cache
+C:\Users\Maciej\Desktop\Jack\obj\Release\net8.0\Jack.AssemblyInfo.cs
+C:\Users\Maciej\Desktop\Jack\obj\Release\net8.0\Jack.csproj.CoreCompileInputs.cache
+C:\Users\Maciej\Desktop\Jack\obj\Release\net8.0\Jack.dll

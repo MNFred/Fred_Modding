@@ -3,7 +3,6 @@
 internal static class CombatDialogue
 {
 	internal static ModEntry Instance => ModEntry.Instance;
-	private static IKokoroApi KokoroApi => Instance.KokoroApi;
 
 	internal static void Inject()
 	{

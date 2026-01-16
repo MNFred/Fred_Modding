@@ -68,7 +68,6 @@ namespace Fred.Jack.Midrow
         new APiercingMissileHit{
           worldX = x,
           outgoingDamage = BASE_DAMAGE,
-          targetPlayer = targetPlayer
         }
       };
     }
@@ -85,7 +84,7 @@ public class APiercingMissileHit : AMissileHit
             return;
         }
 
-        Ship ship = targetPlayer ? s.ship : c.otherShip;
+        Ship ship = missile.targetPlayer ? s.ship : c.otherShip;
         if (ship == null)
         {
           return;
@@ -125,7 +124,7 @@ public class APiercingMissileHit : AMissileHit
             int num = outgoingDamage;
             foreach (Artifact item in s.EnumerateAllArtifacts())
             {
-                num += item.ModifyBaseMissileDamage(s, s.route as Combat, targetPlayer);
+                num += item.ModifyBaseMissileDamage(s, s.route as Combat, missile.targetPlayer);
             }
 
             if (num < 0)
@@ -134,12 +133,12 @@ public class APiercingMissileHit : AMissileHit
             }
 
             DamageDone dmg = ship.NormalDamage(s, c, num, raycastResult.worldX, true);
-            EffectSpawner.NonCannonHit(g, targetPlayer, raycastResult, dmg);
+            EffectSpawner.NonCannonHit(g, missile.targetPlayer, raycastResult, dmg);
             if (xPush != 0)
             {
                 c.QueueImmediate(new AMove
                 {
-                    targetPlayer = targetPlayer,
+                    targetPlayer = missile.targetPlayer,
                     dir = xPush
                 });
             }
@@ -163,7 +162,7 @@ public class APiercingMissileHit : AMissileHit
                 {
                     status = status.Value,
                     statusAmount = statusAmount,
-                    targetPlayer = targetPlayer
+                    targetPlayer = missile.targetPlayer
                 });
             }
 
@@ -172,7 +171,7 @@ public class APiercingMissileHit : AMissileHit
                 c.QueueImmediate(new AWeaken
                 {
                     worldX = worldX,
-                    targetPlayer = targetPlayer
+                    targetPlayer = missile.targetPlayer
                 });
             }
 
@@ -180,8 +179,8 @@ public class APiercingMissileHit : AMissileHit
             {
                 c.QueueImmediate(new AAttack
                 {
-                    damage = Card.GetActualDamage(s, ship.Get(Status.payback) + ship.Get(Status.tempPayback), !targetPlayer),
-                    targetPlayer = !targetPlayer,
+                    damage = Card.GetActualDamage(s, ship.Get(Status.payback) + ship.Get(Status.tempPayback), !missile.targetPlayer),
+                    targetPlayer = !missile.targetPlayer,
                     fast = true
                 });
             }

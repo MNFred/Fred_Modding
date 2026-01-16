@@ -1,8 +1,11 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Fred.Jack.Midrow;
+using HarmonyLib;
+using Microsoft.Xna.Framework.Graphics;
 using Nickel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace Fred.Jack.Midrow
 {
@@ -15,6 +18,10 @@ namespace Fred.Jack.Midrow
     static ClusterMissile()
     {
       DB.drones[MIDROW_OBJECT_NAME] = ModEntry.Instance.ClusterRocket_Sprite.Sprite;
+      ModEntry.Instance.Harmony.Patch(
+			  original: AccessTools.DeclaredMethod(typeof(Combat), nameof(Combat.DestroyDroneAt)),
+			  prefix: new HarmonyMethod(MethodBase.GetCurrentMethod()!.DeclaringType!, nameof(Combat_DestroyDroneAt_Prefix))
+		  );
     }
 
     public ClusterMissile() => skin = MIDROW_OBJECT_NAME;
@@ -67,37 +74,6 @@ namespace Fred.Jack.Midrow
 				Description = ModEntry.Instance.Localizations.Localize(["midrow", "MiniMissile", "description"])
 			}];
     }
-    public override List<CardAction>? GetActionsOnDestroyed(State s, Combat c, bool wasPlayer, int worldX)
-    {
-      if(c.stuff.ContainsKey(worldX-1))
-      {
-        foreach(StuffBase stuff in c.stuff.Values.ToList())
-        {
-          if(c.stuff.ContainsKey(stuff.x))
-          {
-            if(stuff.x == worldX-1)
-            {
-              ADroneMove.DoMoveSingleDrone(s,c,stuff.x,-1,true);
-            }
-          }
-        }
-      }
-      if(c.stuff.ContainsKey(worldX+1))
-      {
-        foreach(StuffBase stuff in c.stuff.Values.ToList())
-        {
-          if(c.stuff.ContainsKey(stuff.x))
-          {
-            if(stuff.x == worldX+1)
-            {
-              ADroneMove.DoMoveSingleDrone(s,c,stuff.x,1,true);
-            }
-          }
-        }
-      }
-      c.QueueImmediate(new APlaceMissile{X = worldX, XL = this.xLerped});
-      return null;
-    }
     public override List<CardAction>? GetActions(State s, Combat c)
     {
       return new List<CardAction>()
@@ -106,23 +82,59 @@ namespace Fred.Jack.Midrow
         {
           worldX = x,
           outgoingDamage = BASE_DAMAGE,
-          targetPlayer = targetPlayer
         }
       };
     }
+    private static void Combat_DestroyDroneAt_Prefix(State s, int x, bool playerDidIt)
+    {
+      Route route = s.route;
+      Combat? combat = route as Combat;
+      if (combat != null)
+      {
+        StuffBase? stuff = combat.stuff.GetValueOrDefault(x);
+        if(stuff != null && stuff is ClusterMissile)
+        {
+          combat.QueueImmediate(new APlaceMissile{timer = 0.0, X = stuff.x, targettingUs = stuff.targetPlayer, XL = stuff.xLerped});
+          combat.QueueImmediate(new MoveObstructions{X = stuff.x, timer = 0.0});
+        }
+      }
+    }
   }
-  public class APlaceMissile : CardAction
+}
+public class APlaceMissile : CardAction
   {
     public int X;
     public double XL;
+    public bool targettingUs;
     public override void Begin(G g, State s, Combat c)
     {
-      MiniMissile mini = new MiniMissile{x = X-1, xLerped = XL - 1.0};
-      MiniMissile mini2 = new MiniMissile{x = X, xLerped = XL};
-      MiniMissile mini3 = new MiniMissile{x = X+1, xLerped = XL + 1.0};
+      StuffBase? somethingHereM = c.stuff.GetValueOrDefault(X);
+      MiniMissile mini = new MiniMissile{x = X-1, xLerped = XL - 1.0, targetPlayer = targettingUs};
+      MiniMissile mini2 = new MiniMissile{x = X, xLerped = XL, targetPlayer = targettingUs};
+      MiniMissile mini3 = new MiniMissile{x = X+1, xLerped = XL + 1.0, targetPlayer = targettingUs};
       c.stuff[X-1] = mini;
-      c.stuff[X] = mini2;
+      if(somethingHereM == null)
+      {
+        c.stuff[X] = mini2;
+      }
       c.stuff[X+1] = mini3;
     }
   }
+public class MoveObstructions : CardAction
+{
+  public int X;
+    public override void Begin(G g, State s, Combat c)
+    {
+      StuffBase? somethingHereL = c.stuff.GetValueOrDefault(X-1);
+      StuffBase? somethingHereR = c.stuff.GetValueOrDefault(X+1);
+      if(somethingHereL != null)
+      {
+        ADroneMove.DoMoveSingleDrone(s,c,X-1,-1,true);
+      }
+      if(somethingHereR != null)
+      {
+        ADroneMove.DoMoveSingleDrone(s,c,X+1,1,true);
+      }
+      return;
+    }
 }

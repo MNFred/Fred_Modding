@@ -17,14 +17,14 @@ public sealed class ApiImplementation : IJackApi
 		=> ModEntry.Instance.MidrowHaltStatus;
 	public IStatusEntry LoseDroneshiftNextStatus
 		=> ModEntry.Instance.LoseDroneshiftNextStatus;
-	public MiniMissile MiniMissile
+	public StuffBase MiniMissile
 		=> new MiniMissile();
-	public APRocket APRocket
+	public StuffBase APRocket
 		=> new APRocket();
-	public BalisticDormant balisticMissile
+	public StuffBase BalisticMissile
 		=> new BalisticDormant();
-	public ClusterMissile clusterMissile
+	public StuffBase ClusterMissile
 		=> new ClusterMissile();
-	public BlankMissile blankMissile
+	public StuffBase BlankMissile
 		=> new BlankMissile();
 }
